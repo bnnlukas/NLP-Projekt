@@ -10,8 +10,8 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 ### Umsetzung/Tools
 - Open-Source Rasa Chatbot (Fragen ob Alternative verwendet werden soll)
 - APIs zum Anbinden/Integrieren der relevanten Daten
-- Frontend mit Python-Flask
-- Chatbotwidget mit HTML (CSS)
+- Backend mit Python-Flask
+- Frontend mit HTML (CSS)
 - Docker
 - Visualisierungen mit Python Packages
 
