@@ -9,6 +9,8 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 
 ### Umsetzung/Tools
 - Open-Source Rasa Chatbot (Fragen ob Alternative verwendet werden soll)
+  - gibt schon vordefinierte modelle, man beschäftigt sich mit dem Framework, erklären können wie das funktioniert (NLP Pipeline bearbeiten) 
+  - besser selbst modelle trainieren( Zitat: " man macht sich damit das leben leichter")
 - APIs zum Anbinden/Integrieren der relevanten Daten
 - Backend mit Python-Flask
 - Frontend mit HTML (CSS)
