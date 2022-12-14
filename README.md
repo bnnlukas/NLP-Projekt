@@ -25,3 +25,7 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 - Pascal 
 
 
+### Useful links
+- API Anbindung: https://www.api-football.com/news/post/how-to-use-api-football-with-python
+
+
