@@ -6,7 +6,7 @@ services:
             - "6000:6000"
         volumes:
             - .:/code
-        depends_on:
-            - redis
-    redis:
-        image: redis
+    #     depends_on:
+    #         - redis
+    # redis:
+    #     image: redis
