@@ -16,6 +16,7 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 - Frontend mit HTML (CSS)
 - Docker
 - Visualisierungen mit Python Packages
+- NER & Intentanalyse
 
 
 ### Teilnehmer
