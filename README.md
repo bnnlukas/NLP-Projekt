@@ -17,6 +17,7 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 - Docker
 - Visualisierungen mit Python Packages
 - NER & Intentanalyse
+- - Sequence tagging
 
 
 ### Teilnehmer
