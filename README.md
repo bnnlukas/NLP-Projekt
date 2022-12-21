@@ -27,6 +27,13 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 - Pascal 
 
 
+### Funktionen des Chatbots
+- Visualisierung der Ausgabe
+- Interaktion: Kunde/Anwender kann dem Chatbot Fragen stellen welche vom Chatbot beantwortet werden
+- Named Entity Recognition
+
+
+
 ### Useful links
 - API Anbindung: https://www.api-football.com/news/post/how-to-use-api-football-with-python
 
