@@ -30,7 +30,14 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 ### Funktionen des Chatbots
 - Visualisierung der Ausgabe
 - Interaktion: Kunde/Anwender kann dem Chatbot Fragen stellen welche vom Chatbot beantwortet werden
-- Named Entity Recognition
+- Named Entity Recognition: um Vereine und Spieler zu erkennen und dazu die Platzierungen herausfinden.
+- Intentanalyse: 
+
+
+### 
+1. Entity Recognition
+2. Intent -> in API nach Info suchen
+3. Antwort formulieren
 
 
 
