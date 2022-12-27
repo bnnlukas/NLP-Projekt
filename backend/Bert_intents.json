@@ -1,0 +1,55 @@
+{ 
+        "train": [
+        [
+        "what expression would i use to say i love you if i were an italian", 
+        "translate"
+        ], 
+        [
+        "can you tell me how to say 'i do not speak much spanish', in spanish", 
+        "translate"
+        ], 
+        [
+            "how do you say hello in japanese", 
+            "translate"
+        ], 
+        [
+            "how do i ask about the weather in chinese", 
+            "translate"
+        ], 
+        [
+            "how can i say \"cancel my order\" in french",
+            "translate"
+        ]
+    ],
+
+        "test": [
+        [
+        "how would you say fly in italian", 
+        "translate"
+        ], 
+        [
+        "what's the spanish word for pasta", 
+        "translate"
+        ], 
+        [
+        "how would they say butter in zambia", 
+        "translate"
+        ], 
+        [
+        "how do you say fast in spanish", 
+        "translate"
+        ] 
+
+    ],
+        "val": [
+        [
+            "in spanish, meet me tomorrow is said how", 
+            "translate"
+        ], 
+        [
+            "in french, how do i say, see you later", 
+            "translate"
+        ]
+    ]
+
+}
