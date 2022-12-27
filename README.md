@@ -23,3 +23,5 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 - Pascal 
 
 
+### INTENTANALYSE
+- 
