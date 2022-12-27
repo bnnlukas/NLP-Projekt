@@ -1,0 +1,43 @@
+{
+    "intents": [
+        {
+            "tag": "Tabellenplatz",
+            "patterns": [
+                "Platzierung",
+                "Platz",
+                "Tabellenposition"
+                
+            ]
+        },
+        {
+            "tag": "Spielername",
+            "patterns": [
+                "Name",
+                "Spieler"
+            ]
+        },
+        {
+            "tag": "Vereinsname",
+            "patterns": [
+                "Verein",
+                "Club",
+                "Team"
+            ]
+        },
+        {
+            "tag": "Spielername",
+            "patterns": [
+                "Name",
+                "Spieler"
+            ]
+        },
+        {
+            "tag": "Spielerinformation",
+            "patterns": [
+                "Statistik",
+                "Spielerstatistik"
+        
+            ]
+        }
+    ]
+}
