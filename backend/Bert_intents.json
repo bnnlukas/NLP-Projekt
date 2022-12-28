@@ -1,24 +1,56 @@
 { 
         "train": [
         [
-        "what expression would i use to say i love you if i were an italian", 
-        "translate"
+        "Where does Manuel Neuer Play?", 
+        "Playerteam"
         ], 
         [
-        "can you tell me how to say 'i do not speak much spanish', in spanish", 
-        "translate"
+        "Where did Oliver Kahn play in his career?", 
+        "Playerteam"
         ], 
         [
-            "how do you say hello in japanese", 
-            "translate"
+        "Who plays at Manchester United", 
+        "Player"
         ], 
         [
-            "how do i ask about the weather in chinese", 
-            "translate"
+        "who played for arsenal London", 
+        "Player"
         ], 
         [
-            "how can i say \"cancel my order\" in french",
-            "translate"
+        "How many goals did Neymar score in his career",
+        "playerstatistic"
+        ], 
+        [
+        "Did Mbappe got injured yet?",
+        "playerstatistic"
+        ], 
+        [
+        "Which Club plays in the Bundesliga",
+        "Team"
+        ], 
+        [
+        "Where ",
+        ""
+        ], 
+        [
+            "How many goals did Neymar score in his career",
+            "playerstatistic"
+        ], 
+        [
+            "How many goals did Neymar score in his career",
+            "playerstatistic"
+        ], 
+        [
+            "How many goals did Neymar score in his career",
+            "playerstatistic"
+        ], 
+        [
+            "How many goals did Neymar score in his career",
+            "playerstatistic"
+        ], 
+        [
+            "How many goals did Neymar score in his career",
+            "playerstatistic"
         ]
     ],
 
