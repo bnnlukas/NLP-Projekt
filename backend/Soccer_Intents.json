@@ -38,6 +38,14 @@
                 "Spielerstatistik"
         
             ]
+        },
+        {
+            "tag": "Spielerinformation",
+            "patterns": [
+                "Statistik",
+                "Spielerstatistik"
+        
+            ]
         }
     ]
 }

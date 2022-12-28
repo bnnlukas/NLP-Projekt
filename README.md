@@ -24,4 +24,12 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 
 
 ### INTENTANALYSE
+
+
+
+### ToDo 28.12
+- API festlegen @bnnlukas
+- Intents festlegen @PB-flitze @bnnlukas
+- Daten für Training von Intentclassifier @PB-flitze
+- Interaktion mit User -> wie Antwortet Chatbot @bgrnaymane
 - 
