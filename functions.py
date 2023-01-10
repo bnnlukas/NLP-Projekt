@@ -73,19 +73,6 @@ def return_answer(input, intent):
             nation = [token.lemma_ for token in txt if token.ent_type_ == "GPE"]
             team_pos = df['Position'].loc[df['Team'] == nation[0].capitalize()]
             output = f'At the {year[0]} World Cup, {nation[0]} finished the {team_pos.item()}th place'
-        return 'Question: ' + input + '\nAnswer: ' + output
+        return output
     except:
         return 'Please type in your question again'
-
-    
-
-YearHost = return_answer('Where was the world cup 1958?', 'YearHost')
-yearMatches = return_answer('How many matches where played in 1930?', 'yearMatches')
-avgGoals = return_answer('In average, how many goals where scored in 1998?', 'year(avg)Goals')
-Goals = return_answer('How many goals where scored 1950?', 'yearGoals')
-PlacementTeam = return_answer('Which Team became the world champion at the first world cup?', 'PlacementTeam')
-TeamPlacement = return_answer('Which place did Argentina become in the first world cup?', 'TeamPlacement')
-
-output = return_answer('How many Games were played in 1990?', 'yearMatches')
-
-print(output)
