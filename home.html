@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./Css/main.css"> -->
+    <link rel="stylesheet" href="./Css/chatBot.css">
+    <!-- <link rel="shortcut icon" href="gfx/logo.png" type="image/x-icon"> -->
+    <style>
+        body {
+          background-image: url('https://img.freepik.com/premium-vector/football-world-cup-background-banner-soccer-championship-2022-qatar_29865-3051.jpg?w=900');
+        }
+        </style>
+</head>
+<body>
+    <div class="chatBot">
+        <div class="chatBotHeading">
+            <label for="chatTextBox" id="chatOpenTrigger" class="">FIFA World Cup ChatBot</label>
+        </div>
+        <hr class="">
+        <div class="chatBody">
+            <div class="chatSession">
+            </div>
+        </div>
+        <form class="chatForm" autocomplete="off">
+            <div class="typingArea">
+                <textarea name="chatInput" id="chatTextBox" class="textArea" onblur="if(!validateMessage()) this.value = 'Type here...'" onfocus="if(!validateMessage()) this.value = ''"></textarea>
+                <button type="submit" class="sendButton" id="sendButton"><img src="./Gfx/send.svg" alt="Send" srcset=""></button>
+            </div>
+            <button type="button" id="chatCloseTrigger">Diving into Halftime!</button>
+        </form>
+    </div>
+    <script src="./Js/chatBotConversation.js"></script>
+    <script src="./Js/chatBotValidate.js"></script>
+    <script src="./Js/chatBotAnimate.js"></script>
+</body>
+</html>
