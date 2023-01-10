@@ -134,3 +134,8 @@ def get_intent(input):
     intent = intent_categories[int(y)]
 
     return intent
+
+
+intent = get_intent('How many Goals were scored in 1990?')
+
+print(intent)
