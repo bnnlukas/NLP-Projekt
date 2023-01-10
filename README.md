@@ -21,7 +21,7 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 
 
 ### Teilnehmer
-- Lukas  
+- Lukas
 - Aymane 
 - Jasmina 
 - Pascal 
@@ -38,10 +38,3 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 1. Entity Recognition
 2. Intent -> in API nach Info suchen
 3. Antwort formulieren
-
-
-
-### Useful links
-- API Anbindung: https://www.api-football.com/news/post/how-to-use-api-football-with-python
-
-
