@@ -9,17 +9,32 @@ Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive En
 
 ### Umsetzung/Tools
 - Open-Source Rasa Chatbot (Fragen ob Alternative verwendet werden soll)
+  - gibt schon vordefinierte modelle, man beschäftigt sich mit dem Framework, erklären können wie das funktioniert (NLP Pipeline bearbeiten) 
+  - besser selbst modelle trainieren( Zitat: " man macht sich damit das leben leichter")
 - APIs zum Anbinden/Integrieren der relevanten Daten
 - Backend mit Python-Flask
 - Frontend mit HTML (CSS)
 - Docker
 - Visualisierungen mit Python Packages
+- NER & Intentanalyse
+- - Sequence tagging
 
 
 ### Teilnehmer
-- Lukas  
+- Lukas
 - Aymane 
 - Jasmina 
 - Pascal 
 
 
+### Funktionen des Chatbots
+- Visualisierung der Ausgabe
+- Interaktion: Kunde/Anwender kann dem Chatbot Fragen stellen welche vom Chatbot beantwortet werden
+- Named Entity Recognition: um Vereine und Spieler zu erkennen und dazu die Platzierungen herausfinden.
+- Intentanalyse: 
+
+
+### 
+1. Entity Recognition
+2. Intent -> in API nach Info suchen
+3. Antwort formulieren
