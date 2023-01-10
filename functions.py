@@ -76,3 +76,7 @@ def return_answer(input, intent):
         return 'Question: ' + input + '\nAnswer: ' + output
     except:
         return 'Please type in your question again'
+
+def get_intent(input):
+    intent = ''
+    return intent
