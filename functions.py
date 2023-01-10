@@ -7,9 +7,11 @@ from spacy.lang.en.examples import sentences
 from numerizer import numerize
 
 replace_dict = {
+    'won': 'became the 1st place',
+    'winner': 'became the 1st place',
     'world-champion': '1st place',
     'world champion': '1st place',
-    'champion': '1st place',
+    'champion ': '1st place',
     'last world championship': 'World Cup in 2022',
     'last world-championship': 'World Cup in 2022',
     'last world cup': 'World Cup in 2022',
@@ -84,4 +86,6 @@ Goals = return_answer('How many goals where scored 1950?', 'yearGoals')
 PlacementTeam = return_answer('Which Team became the world champion at the first world cup?', 'PlacementTeam')
 TeamPlacement = return_answer('Which place did Argentina become in the first world cup?', 'TeamPlacement')
 
-print(TeamPlacement)
+output = return_answer('How many Games were played in 1990?', 'yearMatches')
+
+print(output)
