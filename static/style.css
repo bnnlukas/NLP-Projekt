@@ -27,17 +27,23 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    vertical-align: top;
-    justify-content: center;
+    /*vertical-align: top;*/
     background-size: cover; 
-    margin-bottom: 30px;
+}
+
+.header_alignment{
+    position: fixed;
+    top: 20%;
+    
 }
 
 .header__title {
+    text-align: center;
+}
+.header__title span {
     font-size: 3rem;
     color: #fff;
     background: var(--primaryGradient);
-    overflow: hidden;
     padding: .1em .4em;
     border-radius: 10px;
 }
@@ -48,6 +54,7 @@ header {
     background: var(--primaryGradient);
     border-radius: 10px;
     padding: .1em .4em;
+    text-align: center;
 }
 
 /* CHATBOX
@@ -129,12 +136,14 @@ header {
 }
 
 .chatbox__support {
-    background: #f9f9f9;
+    background: white;
     height: 450px;
     width: 350px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 /* HEADER */
