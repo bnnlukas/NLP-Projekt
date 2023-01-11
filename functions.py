@@ -73,6 +73,10 @@ def return_answer(input, intent):
             nation = [token.lemma_ for token in txt if token.ent_type_ == "GPE"]
             team_pos = df['Position'].loc[df['Team'] == nation[0].capitalize()]
             output = f'At the {year[0]} World Cup, {nation[0]} finished the {team_pos.item()}th place'
-        return output
+        return 'Question: ' + input + '\nAnswer: ' + output
     except:
         return 'Please type in your question again'
+
+def get_intent(input):
+    intent = ''
+    return intent
