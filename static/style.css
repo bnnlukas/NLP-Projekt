@@ -17,6 +17,37 @@ body {
     --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
     --primary: #0a2689;
+    font-family: monospace;
+}
+
+header {
+    height: 100vh;
+    background-image: url('https://images8.alphacoders.com/128/1288503.jpg');
+    /* flex-box thing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: top;
+    justify-content: center;
+    background-size: cover; 
+    margin-bottom: 30px;
+}
+
+.header__title {
+    font-size: 3rem;
+    color: #fff;
+    background: var(--primaryGradient);
+    overflow: hidden;
+    padding: .1em .4em;
+    border-radius: 10px;
+}
+
+.header__description {
+    font-size: 2rem;
+    color: white;
+    background: var(--primaryGradient);
+    border-radius: 10px;
+    padding: .1em .4em;
 }
 
 /* CHATBOX
@@ -124,12 +155,12 @@ body {
 }
 
 .chatbox__heading--header {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: white;
 }
 
 .chatbox__description--header {
-    font-size: .9rem;
+    font-size: 1.2rem;
     color: white;
 }
 

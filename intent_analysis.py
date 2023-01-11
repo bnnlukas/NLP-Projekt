@@ -42,6 +42,10 @@ except AttributeError:
 else:
     ssl._create_default_https_context = _create_unverified_https_context
 
+def train_model():
+    trained_model = ''
+    return trained_model
+
 def get_intent(input):
     df = pd.DataFrame(data)
     
