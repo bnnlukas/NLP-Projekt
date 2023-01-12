@@ -57,13 +57,7 @@ class Chatbox {
           .then(r => r.json())
           .then(r => {
             let msg2 = { name: "Bot", message: r.answer };
-            if (Object.values(msg2).includes('Please type in your question again')) {
-                let msg2_modified = { name: "Bot", message: 'test' }
-                this.messages.push(msg2_modified)
-             }
-            else{
-                this.messages.push(msg2);
-            }
+            this.messages.push(msg2);
             this.updateChatText(chatbox)
             textField.value = ''
 

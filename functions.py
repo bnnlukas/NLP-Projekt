@@ -24,6 +24,7 @@ replace_dict = {
 
 def return_answer(input, intent):
     nlp = spacy.load("en_core_web_sm")
+    input = input.lower()
     for key in replace_dict.keys():
         if key in input:
             input = input.replace(str(key), replace_dict[key])
