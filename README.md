@@ -7,20 +7,11 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 
 ### Umsetzung/Tools
 - ~Open-Source Rasa Chatbot (Fragen ob Alternative verwendet werden soll)~ -> eigenes Modell entwickelt und trainiert
-- ~APIs zum Anbinden/Integrieren der relevanten Daten~ -> Nicht umsetzbar, da APIs kosten
+- ~APIs zum Anbinden/Integrieren der relevanten Daten~(Nicht umsetzbar, da APIs kosten) -> CSV-Files zu FIFA Weltmeisterschaften als Datenbasis 
 - Backend mit Python-Flask
-- Frontend mit HTML (CSS) inklusive Javascript Funktion (Chatbot)
+- Frontend mit HTML (CSS) inklusive Javascript Funktion (zur Umsetzung des Chatbot)
 - Docker
-- Visualisierungen mit Python Packages
 - NER & Intentanalyse
-  - Sequence tagging
-
-
-### Teilnehmer
-- Lukas
-- Aymane 
-- Jasmina 
-- Pascal 
 
 
 ### Funktionen des Chatbots
@@ -31,3 +22,9 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 - Numerizer: Erkennung von geschriebenen Zahlen (bsp. eins) 
 - Chatbot akzeptiert lediglich die englische Sprache
 - Intentanalyse: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage diesbezüglich machen
+
+### Teilnehmer
+- Lukas
+- Aymane 
+- Jasmina 
+- Pascal 
