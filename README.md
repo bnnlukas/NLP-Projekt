@@ -2,7 +2,7 @@
 ## Aktuelle Data Science Entwicklungen - Natural Language Processing (WWI20DSA)
 
 ### Idee
-Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, teilnehemende Mannschaften oder erzielte Tore etc. anzeigen lassen zu können.  
+Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, teilnehmende Mannschaften oder erzielte Tore etc. anzeigen lassen zu können.  
 
 ![Alt text](demo.png)
 
