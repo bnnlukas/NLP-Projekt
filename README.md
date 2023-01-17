@@ -26,5 +26,6 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 ### Funktionen des Chatbots
 - Visualisierung der Ausgabe
 - Interaktion: Kunde/Anwender kann dem Chatbot Fragen stellen welche vom Chatbot beantwortet werden
-- Named Entity Recognition: um Vereine und Spieler zu erkennen und dazu die Platzierungen herausfinden.
+- Named Entity Recognition: um Vereine (Geopolitical Entity), Ordinalwerte(Platzierungen)und Date erkennen und ausgeben lassen zu können
+  - Ersetzen von vordefinierten Synonmen (bsp. Weltmeister = 1. Platz)
 - Intentanalyse: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage diesbezüglich machen
