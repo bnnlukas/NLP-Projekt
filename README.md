@@ -13,7 +13,7 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 - Docker
 - Visualisierungen mit Python Packages
 - NER & Intentanalyse
-- - Sequence tagging
+  - Sequence tagging
 
 
 ### Teilnehmer
@@ -28,4 +28,6 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 - Interaktion: Kunde/Anwender kann dem Chatbot Fragen stellen welche vom Chatbot beantwortet werden
 - Named Entity Recognition: um Vereine (Geopolitical Entity), Ordinalwerte(Platzierungen)und Date erkennen und ausgeben lassen zu können
   - Ersetzen von vordefinierten Synonmen (bsp. Weltmeister = 1. Platz)
+- Numerizer: Erkennung von geschriebenen Zahlen (bsp. eins) 
+- Chatbot akzeptiert lediglich die englische Sprache
 - Intentanalyse: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage diesbezüglich machen
