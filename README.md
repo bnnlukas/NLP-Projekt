@@ -3,7 +3,7 @@
 
 ### Idee
 Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, teilnehemende Mannschaften oder erzielte Tore etc. anzeigen lassen zu können.  
-
+![Alt text](demo.png)
 
 ### Umsetzung/Tools
 - ~Open-Source Rasa Chatbot (Fragen ob Alternative verwendet werden soll)~ -> eigenes Modell entwickelt und trainiert
@@ -12,6 +12,7 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 - Frontend mit HTML (CSS) inklusive Javascript Funktion (zur Umsetzung des Chatbot)
 - Docker
 - NER & Intentanalyse
+
 
 
 ### Funktionen des Chatbots
