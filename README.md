@@ -1,17 +1,15 @@
 # Aktuelle Data Science Entwicklungen - Natural Language Processing
-## Entwicklung eines Chatbots für Themen rund um Sport
+## Entwicklung eines Chatbots für Themen rund um die Fussball Weltmeisterschaften
 
 ### Idee
-Für die Männer Sportarten Fußball und Basketball soll ein User die Möglichkeit haben z.b. Spielstände und Ergebnisse, Tabellenplatzierungen und Informationen zu Spielern/Teams und deren Statistiken(Topscorer, Assists, Rebounds etc.) sich per Eingabe bei einem Web Chatbot ausgeben zu lassen. 
-Daneben soll die Entwicklung der Platzierungen der Teams, im Verlauf der Saison visuell dargestellt werden.
+Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, teilnehemende Mannschaften oder erzielte Tore etc. anzeigen lassen zu können. Diese 
 
-Mögliche zusätzlichen Implementierungen: Transfermarktinformation inclusive Entwicklung des Wertes eines Spielers
 
 ### Umsetzung/Tools
 - Open-Source Rasa Chatbot (Fragen ob Alternative verwendet werden soll)
   - gibt schon vordefinierte modelle, man beschäftigt sich mit dem Framework, erklären können wie das funktioniert (NLP Pipeline bearbeiten) 
-  - besser selbst modelle trainieren( Zitat: " man macht sich damit das leben leichter")
-- APIs zum Anbinden/Integrieren der relevanten Daten
+  - besser selbst modelle trainieren
+- ~APIs zum Anbinden/Integrieren der relevanten Daten~
 - Backend mit Python-Flask
 - Frontend mit HTML (CSS)
 - Docker
