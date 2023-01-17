@@ -70,7 +70,11 @@ def return_answer(input, intent):
         
         elif intent == 'TeamPlacement':
             year = [token.lemma_ for token in txt if token.ent_type_ == "DATE"]
-            df = pd.read_csv(f'./data/FIFA - {int(year[0])}.csv')
+            try:
+                df = pd.read_csv(f'./data/FIFA - {int(year[0])}.csv')
+            except:
+                output = 'In this year no world cup was played'
+                return output
             nation = [token.lemma_ for token in txt if token.ent_type_ == "GPE"]
             team_pos = df['Position'].loc[df['Team'] == nation[0].capitalize()]
             output = f'At the {year[0]} World Cup, {nation[0]} finished the {team_pos.item()}th place'
