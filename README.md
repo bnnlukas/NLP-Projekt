@@ -1,5 +1,5 @@
-# Aktuelle Data Science Entwicklungen - Natural Language Processing (WWI20DSA)
-## Entwicklung eines Chatbots für Themen rund um die Fussball Weltmeisterschaften
+# Entwicklung eines Chatbots für Themen rund um die Fussball Weltmeisterschaften
+## Aktuelle Data Science Entwicklungen - Natural Language Processing (WWI20DSA)
 
 ### Idee
 Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, teilnehemende Mannschaften oder erzielte Tore etc. anzeigen lassen zu können. Diese 
