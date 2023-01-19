@@ -24,7 +24,7 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
   - Ersetzen von vordefinierten Synonmen (bsp. Weltmeister = 1. Platz)
 - Numerizer: Erkennung von geschriebenen Zahlen (bsp. eins) 
 - Chatbot akzeptiert lediglich die englische Sprache
-- Intentanalyse: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage diesbezüglich machen
+- Intentanalyse: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage diesbezüglich machen (Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
 
 ### Teilnehmer
 - Lukas
