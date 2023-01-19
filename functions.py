@@ -8,7 +8,7 @@ from numerizer import numerize
 
 replace_dict = {
     'won': 'became the 1st place',
-    'winner': 'became the 1st place',
+    'winner': '1st place',
     'world-champion': '1st place',
     'world champion': '1st place',
     'champion ': '1st place',
