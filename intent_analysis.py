@@ -40,8 +40,13 @@ data = {'query':['Which team became 6th place in 2006?', 'Which team was world c
 
         'won','winner','champion ','world champion','world-champion','first place',
         'Who won the world cup in 1974?', 'Who was world-champion in 1950?', 'Who got the first place of the world cup in 2002?',
-        'Who was the winner of the world-championship in 2006?', 'Who was the champion of the worldcup in 2010?'
-        ],
+        'Who was the winner of the world-championship in 2006?', 'Who was the champion of the worldcup in 2010?',
+
+        'Hello.', 'Hellooo', 'Hi!', 'Hey,', 'Heyyy,', 'Good day!', 'Good evening.',
+
+        'Thank you!', 'Thanks', 'Thank you very much!', 'Okay, thanksie!',
+
+        'Goodbye', 'Bye', 'See you!', 'Byebyeee'],
 
 
        'category':['PlacementTeam','PlacementTeam','PlacementTeam','PlacementTeam',
@@ -70,7 +75,15 @@ data = {'query':['Which team became 6th place in 2006?', 'Which team was world c
 
        'firstPlace','firstPlace', 'firstPlace','firstPlace','firstPlace','firstPlace', 
        'firstPlace','firstPlace','firstPlace',
-       'firstPlace', 'firstPlace']}
+       'firstPlace', 'firstPlace',
+       
+       'greeting', 'greeting', 'greeting', 'greeting', 'greeting', 'greeting','greeting',
+       
+       'thankYou', 'thankYou', 'thankYou', 'thankYou', 
+       
+       'bye', 'bye', 'bye', 'bye']}
+
+       
 stopwords = stopwords.words('english')
 import nltk
 import ssl
