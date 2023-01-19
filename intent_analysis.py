@@ -116,15 +116,10 @@ def get_intent(input):
         for doc in docs:
             if counter % 1000 == 0 and logging:
                 print("Processed %d out of %d documents" % (counter, len(docs)))
-            # Disable tagger so that lemma_ of personal pronouns (I, me, etc) don't getted marked as "-PRON-"
             doc = nlp(doc, disable=['tagger'])
-            # Grab lemmatized form of words and make lowercase
             doc = " ".join([tok.lemma_.lower() for tok in doc])
-            # Split into sentences based on punctuation
             doc = re.split("[\.?!;] ", doc)
-            # Remove commas, periods, and other punctuation (mostly commas)
             doc = [re.sub("[\.,;:!?]", "", sent) for sent in doc]
-            # Split into words
             doc = [sent.split() for sent in doc]
             sentences += doc
             counter += 1
