@@ -83,7 +83,7 @@ data = {'query':['Which team became 6th place in 2006?', 'Which team was world c
        
        'bye', 'bye', 'bye', 'bye']}
 
-       
+
 stopwords = stopwords.words('english')
 import nltk
 import ssl

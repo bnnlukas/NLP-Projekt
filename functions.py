@@ -78,6 +78,15 @@ def return_answer(input, intent):
             nation = [token.lemma_ for token in txt if token.ent_type_ == "GPE"]
             team_pos = df['Position'].loc[df['Team'] == nation[0].capitalize()]
             output = f'At the {year[0]} World Cup, {nation[0]} finished the {team_pos.item()}th place'
+        elif intent == 'greeting':
+            output = f"""Hi, welcome to the FIFA World Cup Chatbot! I was created in the Natural Language 
+            Processing lecture of WWI20DSA by Pascal, Lukas, Jasmina and Aymane. I will answer your 
+            questions regarding all the FIFA World Cups as best as I can. Do you have a question already?
+            I am happy to help you out :)"""
+        elif intent == 'thankYou':
+            output = f'You are welcome! Do you have any additional questions? To get to our easter egg for some fun, you can ask me who the best player of all time is! '
+        elif intent == 'bye':
+            output = f'Good bye, it was nice chatting with you. See you again soon!'
         return output
     except:
         return 'Please type in your question again'
