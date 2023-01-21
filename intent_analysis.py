@@ -1,3 +1,4 @@
+# all necessary imports
 import numpy as np 
 import pandas as pd 
 import matplotlib.pyplot as plt
@@ -13,6 +14,10 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import KFold
 from sklearn.svm import SVC
 from sklearn.model_selection import GridSearchCV
+import nltk
+import ssl
+stopwords = stopwords.words('english')
+
 
 data = {'query':['Which team became 6th place in 2006?', 'Which team was world champion in the year 2010?', 'Who won in 1990?', 'Who was the winner in 1934?',
         'Who became the world champion in 1938?', 'Which team won in 1974?', 'Which team was on the 5th place in the worldcup in 1950?',
@@ -83,11 +88,7 @@ data = {'query':['Which team became 6th place in 2006?', 'Which team was world c
        
        'bye', 'bye', 'bye', 'bye']}
 
-
-stopwords = stopwords.words('english')
-import nltk
-import ssl
-
+# 
 try:
     _create_unverified_https_context = ssl._create_unverified_context
 except AttributeError:
@@ -95,34 +96,36 @@ except AttributeError:
 else:
     ssl._create_default_https_context = _create_unverified_https_context
 
+# defining function to train model with empty list at this point
 def train_model():
     trained_model = ''
     return trained_model
-
+#
 def get_intent(input):
     df = pd.DataFrame(data)
     
+    #necessary nltk and spacy package for the upcoming cleanup part
     nltk.download('stopwords')
     nlp = spacy.load('en_core_web_sm')
     punctuations = string.punctuation
 
-    # Define function to cleanup text by removing personal pronouns, stopwords, and puncuation
+    #remove pronouns, stopwords, and puncuation as a definied function 
     def cleanup_text(docs, logging=False):
-        texts = []
+        texts = [] 
         counter = 1
         for doc in docs:
             if counter % 1000 == 0 and logging:
                 print("Processed %d out of %d documents." % (counter, len(docs)))
             counter += 1
             doc = nlp(doc, disable=['parser', 'ner'])
-            tokens = [tok.lemma_.lower().strip() for tok in doc if tok.lemma_ != '-PRON-']
-            tokens = [tok for tok in tokens if tok not in stopwords and tok not in punctuations]
+            tokens = [tok.lemma_.lower().strip() for tok in doc if tok.lemma_ != '-PRON-'] #Lemmatization and lowercasing
+            tokens = [tok for tok in tokens if tok not in stopwords and tok not in punctuations] #removing stopwords
             tokens = ' '.join(tokens)
             texts.append(tokens)
         return pd.Series(texts)
     train_cleaned = cleanup_text(df['query'], logging=True)
 
-        # Define function to preprocess text for a word2vec model
+        # further cleaning to apply a word2vec model
     def cleanup_text_word2vec(docs, logging=False):
         sentences = []
         counter = 1
@@ -131,20 +134,19 @@ def get_intent(input):
                 print("Processed %d out of %d documents" % (counter, len(docs)))
             doc = nlp(doc, disable=['tagger'])
             doc = " ".join([tok.lemma_.lower() for tok in doc])
-            doc = re.split("[\.?!;] ", doc)
+            doc = re.split("[\.?!;] ", doc) #splitting text into sentences and words
             doc = [re.sub("[\.,;:!?]", "", sent) for sent in doc]
             doc = [sent.split() for sent in doc]
             sentences += doc
             counter += 1
-        return sentences
+        return sentences #list of lists
     train_cleaned_word2vec = cleanup_text_word2vec(df['query'], logging=True)
+    
+    #creating a corpus by joining list of lists of words and fit to tf-idf vectorizer (convert to numerical representation)
     corpus = [" ".join(i) for i in train_cleaned_word2vec]
-
     vectorizer = TfidfVectorizer()
     vec_fit = vectorizer.fit(corpus)
 
-    text = "login is so cool"
-    Y = vec_fit.transform([text])
 
     # Define function to create word vectors given a cleaned piece of text.
     def create_average_vec(doc):
@@ -157,7 +159,7 @@ def get_intent(input):
             average = np.divide(average, num_words)
         return average
     
-    # Create word vectors
+    # Create word vectors for entire cleaned dataset
     train_cleaned_vec = np.zeros((df.shape[0], len(vectorizer.get_feature_names())), dtype="float32")  # 19579 x 300
     for i in range(len(train_cleaned)):
         train_cleaned_vec[i] = create_average_vec(train_cleaned[i])
@@ -165,14 +167,21 @@ def get_intent(input):
     Encoder = LabelEncoder()
     y_train = Encoder.fit_transform(df['category'])
 
+    #k-fold cross validation to evaluate the performance of the trained model 
     param_grid = {'C': [0.1, 1, 10, 100, 1000], 
                'gamma': [1, 0.1, 0.01, 0.001, 0.0001],
               'kernel': ['rbf']} 
     svclassifier = SVC(probability = True)
-    svclassifier.fit(train_cleaned_vec, y_train)
+    #svclassifier.fit(train_cleaned_vec, y_train)
     kfold = KFold(n_splits=5, shuffle=True)
-    grid = GridSearchCV(svclassifier, param_grid, cv=kfold, refit=True, verbose=3)
-    grid.fit(train_cleaned_vec, y_train)
+    grid_search = GridSearchCV(svclassifier, param_grid, cv=kfold, refit=True, verbose=3)
+    grid_search.fit(train_cleaned_vec, y_train)
+
+    # Train the model with the best hyperparameters
+    svclassifier = SVC(C=grid_search.best_params_['C'],
+                   gamma=grid_search.best_params_['gamma'],
+                   kernel=grid_search.best_params_['kernel'])
+    svclassifier.fit(train_cleaned_vec, y_train)
 
     cleanup = cleanup_text([input], logging=True)
     intent_categories = list(Encoder.classes_)
@@ -181,8 +190,13 @@ def get_intent(input):
     cleanup_vec = np.zeros((1, len(vectorizer.get_feature_names())), dtype="float32")  # 19579 x 300
     for i in range(len(cleanup)):
         cleanup_vec[i] = create_average_vec(cleanup[i])
-    y = grid.predict([cleanup_vec[0]])
+    y = svclassifier.predict([cleanup_vec[0]])
 
     intent = intent_categories[int(y)]
 
     return intent
+
+# Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
+
+
+
