@@ -38,4 +38,5 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 - Intentanalyse: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage diesbezüglich machen 
 
 
-
+### Quellen
+- https://www.atlantis-press.com/journals/hcis/125963694
