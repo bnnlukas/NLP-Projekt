@@ -172,10 +172,16 @@ def get_intent(input):
                'gamma': [1, 0.1, 0.01, 0.001, 0.0001],
               'kernel': ['rbf']} 
     svclassifier = SVC(probability = True)
-    svclassifier.fit(train_cleaned_vec, y_train)
+    #svclassifier.fit(train_cleaned_vec, y_train)
     kfold = KFold(n_splits=5, shuffle=True)
-    grid = GridSearchCV(svclassifier, param_grid, cv=kfold, refit=True, verbose=3)
-    grid.fit(train_cleaned_vec, y_train)
+    grid_search = GridSearchCV(svclassifier, param_grid, cv=kfold, refit=True, verbose=3)
+    grid_search.fit(train_cleaned_vec, y_train)
+
+    # Train the model with the best hyperparameters
+    svclassifier = SVC(C=grid_search.best_params_['C'],
+                   gamma=grid_search.best_params_['gamma'],
+                   kernel=grid_search.best_params_['kernel'])
+    svclassifier.fit(train_cleaned_vec, y_train)
 
     cleanup = cleanup_text([input], logging=True)
     intent_categories = list(Encoder.classes_)
@@ -184,10 +190,13 @@ def get_intent(input):
     cleanup_vec = np.zeros((1, len(vectorizer.get_feature_names())), dtype="float32")  # 19579 x 300
     for i in range(len(cleanup)):
         cleanup_vec[i] = create_average_vec(cleanup[i])
-    y = grid.predict([cleanup_vec[0]])
+    y = svclassifier.predict([cleanup_vec[0]])
 
     intent = intent_categories[int(y)]
 
     return intent
 
 # Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
+
+
+
