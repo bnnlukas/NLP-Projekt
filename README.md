@@ -32,12 +32,6 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 **k-fold**  ist eine Technik zur Bewertung der Leistung eines maschinellen Lernmodells, bei der die Daten in k Teilmengen aufgeteilt werden, das Modell auf k-1 der Teilmengen trainiert und auf der verbleibenden Teilmenge bewertet wird. Der Prozess wird k-mal wiederholt und die Leistung wird über alle k Iterationen gemittelt.
 
 
-**Artikel**
-- https://www.atlantis-press.com/journals/hcis/125963694
-
-**Paper/wissenschaftliche Arbeiten**
-- Cahn, Jack. "CHATBOT: Architecture, design, & development." University of Pennsylvania School of Engineering and Applied Science Department of Computer and Information Science (2017).
-- 
 
 
 
@@ -62,4 +56,10 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 
 
 ### Quellen
+**Intentanalyse**
+- Liu, Bing, and Ian Lane. "Attention-based recurrent neural network models for joint intent detection and slot filling." arXiv preprint arXiv:1609.01454 (2016).
+- https://www.atlantis-press.com/journals/hcis/125963694
+- Cahn, Jack. "CHATBOT: Architecture, design, & development." University of Pennsylvania School of Engineering and Applied Science Department of Computer and Information Science (2017).
+- 
+
 
