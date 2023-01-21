@@ -19,6 +19,7 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 - Herausfinden was der User möchte
 - Schlagwörter dem eigentlichen Zweck zuordnen
 - Auf Basis des Intents, weitere aufgaben des Chatbots anstoßen
+- Teil der Natural Language Understanding Domäne
 
 **Support Vector Classifier** ist ein Algorithmus für maschinelles Lernen, der für Klassifizierungsaufgaben verwendet wird. Er findet die beste Grenze (Hyperebene), die die Daten in verschiedene Klassen trennt, indem er die Marge (den Abstand zwischen der Grenze und den nächstgelegenen Datenpunkten aus jeder Klasse) maximiert. SVCs können sowohl für lineare als auch für nichtlineare Klassifizierungsaufgaben eingesetzt werden, indem verschiedene Kernel-Funktionen wie lineare, polynomiale und radiale Basisfunktionen (RBF) verwendet werden. Sie gelten als leistungsfähige Klassifikatoren mit guter Genauigkeit, die besonders nützlich sind, wenn die Daten nicht linear trennbar sind und die Anzahl der Merkmale viel größer ist als die Anzahl der Stichproben.
 
@@ -29,6 +30,14 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 **gridsearch** ist eine Funktion, die dabei hilft, die beste Kombination von Hyperparametern für ein bestimmtes Modell des maschinellen Lernens zu finden. Dazu wird das Modell mit allen möglichen Kombinationen von Hyperparameterwerten trainiert und die Kombination zurückgegeben, die die beste Punktzahl gemäß der angegebenen Scoring-Metrik ergibt.
 
 **k-fold**  ist eine Technik zur Bewertung der Leistung eines maschinellen Lernmodells, bei der die Daten in k Teilmengen aufgeteilt werden, das Modell auf k-1 der Teilmengen trainiert und auf der verbleibenden Teilmenge bewertet wird. Der Prozess wird k-mal wiederholt und die Leistung wird über alle k Iterationen gemittelt.
+
+
+**Artikel**
+- https://www.atlantis-press.com/journals/hcis/125963694
+
+**Paper/wissenschaftliche Arbeiten**
+- Cahn, Jack. "CHATBOT: Architecture, design, & development." University of Pennsylvania School of Engineering and Applied Science Department of Computer and Information Science (2017).
+- 
 
 
 
@@ -53,4 +62,4 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 
 
 ### Quellen
-- https://www.atlantis-press.com/journals/hcis/125963694
+
