@@ -12,6 +12,13 @@ Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den
 
 
 ## Natural Language Processing
+### Pre-Processing
+Der textuelle Input des Users wird in den Vorverarbeitungsschritten in für die Maschinen verständliche Sprache umgewandelt. Dafür wird der Text in Kleinschreibung (lowercase) umformuliert, um so eine Vereinheitlichung des Texts zu erwirken. Zudem werden jegliche Satzzeichen entfernt.
+
+Das SpaCy Modell "en_core_web_sm" wird genutzt, um die Stopwords zu entfernen. Sogenannte Stopwords bezeichnen für die inhaltliche Aussagekraft des Texts nicht aufwertende Begriffe, wie beispielsweise Artikel, Konjunktionen, usw. die dann entfernt werden, um wertvolleren Text zu erhalten.
+
+
+
 ### Named Entity Recognition
 ### Numerizer 
 ### Intentanalyse
