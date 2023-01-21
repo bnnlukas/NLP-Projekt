@@ -15,7 +15,7 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 ### Named Entity Recognition
 ### Numerizer 
 ### Intentanalyse
- (Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
+ 
 
 
 ## Chatbot
