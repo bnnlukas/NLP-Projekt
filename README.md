@@ -61,8 +61,6 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 - https://www.atlantis-press.com/journals/hcis/125963694
 - Cahn, Jack. "CHATBOT: Architecture, design, & development." University of Pennsylvania School of Engineering and Applied Science Department of Computer and Information Science (2017).
 
-
-
 **Named Entity Recognition**
 - 
 
