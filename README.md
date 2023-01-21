@@ -1,5 +1,9 @@
 # Entwicklung eines Chatbots für Themen rund um die Fußball Weltmeisterschaften
-Aktuelle Data Science Entwicklungen - Natural Language Processing (WWI20DSA)
+Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Processing (WWI20DSA) mit den Teilnehmern:
+- Lukas
+- Aymane 
+- Jasmina 
+- Pascal 
 
 ## Idee
 Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, teilnehmende Mannschaften oder erzielte Tore etc. anzeigen lassen zu können.  
@@ -7,24 +11,24 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 ![Alt text](demo.png)
 
 
-## Umsetzung/Tools
+## Natural Language Processing
+### Named Entity Recognition
+### Numerizer 
+### Intentanalyse
+ (Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
+
+
+## Chatbot
 - ~Open-Source Rasa Chatbot (Fragen ob Alternative verwendet werden soll)~ -> eigenes Modell entwickelt und trainiert
 - ~APIs zum Anbinden/Integrieren der relevanten Daten~(Nicht umsetzbar, da APIs kosten) -> CSV-Files zu FIFA Weltmeisterschaften als Datenbasis 
 - Backend mit Python-Flask
 - Frontend mit HTML (CSS) inklusive Javascript Funktion (zur Umsetzung des Chatbot)
 - Docker
-- NER & Intentanalyse
 
-### Intentanalyse
-
-
-
-  (Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
 ### Backend mit Python-Flask
-### Named Entity Recognition
+
 ### Frontend
-### Chatbot
-Funktionen des Chatbots
+### Funktionen des Chatbots
 - Visualisierung der Ausgabe
 - Interaktion: Kunde/Anwender kann dem Chatbot Fragen stellen welche vom Chatbot beantwortet werden
 - Named Entity Recognition: um Vereine (Geopolitical Entity), Ordinalwerte(Platzierungen)und Date erkennen und ausgeben lassen zu können
@@ -33,8 +37,5 @@ Funktionen des Chatbots
 - Chatbot akzeptiert lediglich die englische Sprache
 - Intentanalyse: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage diesbezüglich machen 
 
-### Teilnehmer
-- Lukas
-- Aymane 
-- Jasmina 
-- Pascal 
+
+
