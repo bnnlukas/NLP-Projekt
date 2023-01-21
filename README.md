@@ -60,6 +60,10 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 - Liu, Bing, and Ian Lane. "Attention-based recurrent neural network models for joint intent detection and slot filling." arXiv preprint arXiv:1609.01454 (2016).
 - https://www.atlantis-press.com/journals/hcis/125963694
 - Cahn, Jack. "CHATBOT: Architecture, design, & development." University of Pennsylvania School of Engineering and Applied Science Department of Computer and Information Science (2017).
+
+
+
+**Named Entity Recognition**
 - 
 
 
