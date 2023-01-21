@@ -6,7 +6,7 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
 - Pascal 
 
 ## Idee
-Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, teilnehmende Mannschaften oder erzielte Tore etc. anzeigen lassen zu können.  
+Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den Chatbot verschiedene Informationen über die FIFA Weltmeisterschaften anzeigen lassen zu können.  
 
 ![Alt text](demo.png)
 
