@@ -19,7 +19,7 @@ Für die Sportart Fußball soll ein User die Möglichkeit haben etwaige Sieger, 
 - Herausfinden was der User möchte
 - Schlagwörter dem eigentlichen Zweck zuordnen
 - Auf Basis des Intents, weitere aufgaben des Chatbots anstoßen
-- 
+
 **Support Vector Classifier** ist ein Algorithmus für maschinelles Lernen, der für Klassifizierungsaufgaben verwendet wird. Er findet die beste Grenze (Hyperebene), die die Daten in verschiedene Klassen trennt, indem er die Marge (den Abstand zwischen der Grenze und den nächstgelegenen Datenpunkten aus jeder Klasse) maximiert. SVCs können sowohl für lineare als auch für nichtlineare Klassifizierungsaufgaben eingesetzt werden, indem verschiedene Kernel-Funktionen wie lineare, polynomiale und radiale Basisfunktionen (RBF) verwendet werden. Sie gelten als leistungsfähige Klassifikatoren mit guter Genauigkeit, die besonders nützlich sind, wenn die Daten nicht linear trennbar sind und die Anzahl der Merkmale viel größer ist als die Anzahl der Stichproben.
 
 **Word2Vec** ist eine Technik zur Erstellung von Worteinbettungen, d.h. numerischen Darstellungen von Wörtern. Die Idee hinter den Worteinbettungen ist es, Wörter in einem hochdimensionalen Raum so darzustellen, dass semantisch ähnliche Wörter nahe beieinander liegen und unähnliche Wörter weit voneinander entfernt sind. Word2Vec verwendet ein neuronales Netz, um diese Repräsentationen aus einem großen Korpus von Textdaten zu lernen. Die daraus resultierenden Worteinbettungen können für eine Vielzahl von Aufgaben der Verarbeitung natürlicher Sprache verwendet werden.
