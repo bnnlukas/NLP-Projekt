@@ -43,7 +43,7 @@ data = {'query':['Which team became 6th place in 2006?', 'Which team was world c
         'What is the total number of games played in the year 2002?', 'What is the sum of matches played in 1974?', 'In 2018, how many matches took place?',
         'How many matches have been played in 1950?', 'How many games were played in 1974?', 'What is the total of matches played in 1978?',
 
-        'won','winner','champion ','world champion','world-champion','first place',
+        'Who was the winner of the world cup in 1990?','Name the champion of 2000?','Which nation was the world champion in the year 2014?','Which nation was the world-champion in the year 2014?','Which team was the first place in 2002?', 'Who won in 2010?',
         'Who won the world cup in 1974?', 'Who was world-champion in 1950?', 'Who got the first place of the world cup in 2002?',
         'Who was the winner of the world-championship in 2006?', 'Who was the champion of the worldcup in 2010?',
 
@@ -78,7 +78,7 @@ data = {'query':['Which team became 6th place in 2006?', 'Which team was world c
        'yearMatches','yearMatches','yearMatches', 
        'yearMatches','yearMatches','yearMatches', 
 
-       'firstPlace','firstPlace', 'firstPlace','firstPlace','firstPlace','firstPlace', 
+       'firstPlace', 'firstPlace', 'firstPlace','firstPlace','firstPlace','firstPlace', 
        'firstPlace','firstPlace','firstPlace',
        'firstPlace', 'firstPlace',
        
@@ -146,6 +146,7 @@ def get_intent(input):
     corpus = [" ".join(i) for i in train_cleaned_word2vec]
     vectorizer = TfidfVectorizer()
     vec_fit = vectorizer.fit(corpus)
+    print(corpus)
 
 
     # Define function to create word vectors given a cleaned piece of text.
