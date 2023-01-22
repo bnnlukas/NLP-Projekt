@@ -61,6 +61,7 @@ Folgende Wortarten wurden dazu genutzt und mithilfe von Spacy erkannt:
 ### Frontend (HTML, CSS, Javascript)
 Vorlage: https://github.com/patrickloeber/chatbot-deployment
 - Zulassen von Userinput durch den Chatbot und weitergeben dieses Inputs an die Pythonfunktionen
+- Zurückgeben der Antwort des Chatbots und Darstellen in dem zugehörigen Fenster
 
 ### Funktionen des Chatbots
 - Visualisierung der Ausgabe
@@ -70,6 +71,14 @@ Vorlage: https://github.com/patrickloeber/chatbot-deployment
 - Numerizer: Erkennung von geschriebenen Zahlen (bsp. eins) 
 - Chatbot akzeptiert lediglich die englische Sprache
 - Intentanalyse: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage diesbezüglich machen 
+
+### Mögliche Fragen an den Chatbot
+- Which team became ___ place in ___?
+- On which position was ___ in ___?
+- Who hosted the world cup in the year ___?
+- On average, how many goals were scored in ___?
+- How many goals were scored ___?
+- How many matches were played in the world-championship of ___?
 
 
 ### Quellen
