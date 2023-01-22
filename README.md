@@ -2,14 +2,17 @@
 Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Processing (WWI20DSA) mit den Teilnehmern und den erledigten Aufgaben:
 - Lukas
   - Websiteentwicklung, inkl. Zusammenführen der NLP-Pipeline und verbinden mit den Chatboteingaben
-  - Named Entity Recognition, um auf Basis eines erkannten Intents die korrekten Daten aus den CSV-Files einzulesen und in Form einer Antwort an den Chatbot zu übergeben
+  - NER-Analyse, um auf Basis eines erkannten Intents die korrekten Daten aus den CSV-Files einzulesen und in Form einer Antwort an den Chatbot zu übergeben
+  - Entwicklung der Evaluierungsmethode für den Classifier
+
 - Aymane 
 - Jasmina 
-  - Überarbeiten und erstellen von Intents, sowie dazugehörigen Antworten
-  - Initialisierung der Named Entity Recognition, anfänglich um beispielsweise Fußballvereine als Organisationen zu markieren
-  - Co-Programming bei den Pre-Processing Schritten
-  - Überarbeitung weiterer Codeabschnitte
 - Pascal 
+  - Recherche und Testing verschiedener Intentanalysis Ansätze, mitunter mit BERT.
+  - Vorbereitung der selbst erstellten Trainingsdaten
+  - Entwicklung des Intent Detectors auf Basis eines Support Vector Classifiers, Word2Vec und Tf-idf und abschließendem Gridsearch und k-fold tuning mithilfe von den u.g. Quellen. 
+  - Entwicklung der Evaluierungsmethode für den Classifier
+  
 
 ## Idee
 Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den Chatbot verschiedene Informationen über die FIFA Weltmeisterschaften anzeigen lassen zu können.  
