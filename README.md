@@ -10,6 +10,13 @@ Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den
 
 ![Alt text](demo.png)
 
+## Mögliche Fragen an den Chatbot
+- Which team became ___ place in ___?
+- On which position was ___ in ___?
+- Who hosted the world cup in the year ___?
+- On average, how many goals were scored in ___?
+- How many goals were scored ___?
+- How many matches were played in the world-championship of ___?
 
 ## Natural Language Processing
 ### Pre-Processing
@@ -71,15 +78,6 @@ Vorlage: https://github.com/patrickloeber/chatbot-deployment
 - Numerizer: Erkennung von geschriebenen Zahlen (bsp. eins) 
 - Chatbot akzeptiert lediglich die englische Sprache
 - Intentanalyse: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage diesbezüglich machen 
-
-### Mögliche Fragen an den Chatbot
-- Which team became ___ place in ___?
-- On which position was ___ in ___?
-- Who hosted the world cup in the year ___?
-- On average, how many goals were scored in ___?
-- How many goals were scored ___?
-- How many matches were played in the world-championship of ___?
-
 
 ### Quellen
 **Intentanalyse**
