@@ -7,9 +7,8 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
 
 - Aymane 
   - Allgemeine Recherche zum Aufbau eines NLP-Chatbots und der Entwicklung der NLP-Pipeline
-  - Konzeption der Idee und des Anwendungsfalles, welches in unserem Fall die FIFA Weltmeisterschaften sind
   - Mithilfe bei der Erstellung der selbsterstellten Trainingsdaten 
-  - Frontendentwicklung und Erstellung eines blueprint des Chat-Bots
+  - Entwurf und Design eines blueprint und anschließende Entwicklung eines Beispiel Frontend
 - Jasmina 
   - Überarbeitung und Erstellung von Intents, inklusive passender Antworten. Dabei lag der Fokus vor allem auf allgemeinen Intents, um dem Chatbot Charakter zu verleihen.
    - Initialisierung der Named Entitity Recognition, anfänglich um beispielsweise Vereine als Organisationen zu markieren, Vorbereitung für weitere Nutzung.
