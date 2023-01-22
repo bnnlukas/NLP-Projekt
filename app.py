@@ -9,8 +9,8 @@ def index_get():
     return render_template('base.html')
     
 
-@app.post('/predict')
-def predict():
+@app.post('/get_answer')
+def get_answer():
     text = request.get_json().get('message')
     response = get_response(text)
     message = {"answer": response}

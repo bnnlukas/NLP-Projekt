@@ -35,25 +35,41 @@ def return_answer(input, intent):
         if intent == 'YearHost':
             year = [token.lemma_ for token in txt if token.ent_type_ == "DATE"]
             df = pd.read_csv('./data/FIFA - World Cup Summary.csv')
-            host = df['HOST'].loc[df['YEAR'] == int(year[0])]
+            try:
+                host = df['HOST'].loc[df['YEAR'] == int(year[0])]
+            except:
+                output = 'In this year no World Cup was played.'
+                return output
             output = f'The host of the FIFA World Cup in {year[0]} was {host.item()}.'
 
         elif intent == 'yearMatches':
             year = [token.lemma_ for token in txt if token.ent_type_ == "DATE"]
             df = pd.read_csv('./data/FIFA - World Cup Summary.csv')
-            matches = df['MATCHES PLAYED'].loc[df['YEAR'] == int(year[0])]
+            try:
+                matches = df['MATCHES PLAYED'].loc[df['YEAR'] == int(year[0])]
+            except:
+                output = 'In this year no World Cup was played.'
+                return output
             output = f'In {year[0]} a total of {matches.item()} matches were played.'
 
         elif intent == 'year(avg)Goals':
             year = [token.lemma_ for token in txt if token.ent_type_ == "DATE"]
             df = pd.read_csv('./data/FIFA - World Cup Summary.csv')
-            avgGoals = df['AVG GOALS PER GAME'].loc[df['YEAR'] == int(year[0])]
+            try:
+                avgGoals = df['AVG GOALS PER GAME'].loc[df['YEAR'] == int(year[0])]
+            except:
+                output = 'In this year no World Cup was played.'
+                return output
             output = f'In {year[0]} on average {avgGoals.item()} goals were scored per game.'
 
         elif intent == 'yearGoals':
             year = [token.lemma_ for token in txt if token.ent_type_ == "DATE"]
             df = pd.read_csv('./data/FIFA - World Cup Summary.csv')
-            avgGoals = df['GOALS SCORED'].loc[df['YEAR'] == int(year[0])]
+            try:
+                avgGoals = df['GOALS SCORED'].loc[df['YEAR'] == int(year[0])]
+            except:
+                output = 'In this year no World Cup was played.'
+                return output
             output = f'In {year[0]} in total {avgGoals.item()} goals were scored.'
 
         elif intent == 'PlacementTeam':
@@ -62,7 +78,11 @@ def return_answer(input, intent):
                 txt_modified = input.replace(str(key), ord_dict[key])
                 txt = nlp(txt_modified)
             year = [token.lemma_ for token in txt if token.ent_type_ == "DATE"]
-            df = pd.read_csv(f'./data/FIFA - {int(year[0])}.csv')
+            try:
+                df = pd.read_csv(f'./data/FIFA - {int(year[0])}.csv')
+            except:
+                output = 'In this year no World Cup was played.'
+                return output
             pos_str = [token.lemma_ for token in txt if token.ent_type_ == "ORDINAL"]
             pos_int = int(re.search(r'\d+', pos_str[0]).group())
             pos_team = df['Team'].loc[df['Position'] == pos_int]

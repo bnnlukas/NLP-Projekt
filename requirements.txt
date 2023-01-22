@@ -1,0 +1,8 @@
+flask
+numpy
+pandas
+nltk
+spacy
+IPython
+scikit-learn
+numerizer
