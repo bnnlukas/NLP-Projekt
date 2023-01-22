@@ -10,6 +10,7 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
   - Überarbeitung und Erstellung von Intents, inklusive passender Antworten. Dabei lag der Fokus vor allem auf allgemeinen Intents, um dem Chatbot Charakter zu verleihen.
    - Initialisierung der Named Entitity Recognition, anfänglich um beispielsweise Vereine als Organisationen zu markieren, Vorbereitung für weitere Nutzung.
   - Erstellung von weiteren Testdaten, um die Datengrundlage zu erweitern und so die Performance zu verbessern.
+  - Sicherstellung passender Vorverarbeitungsschritte.
   - Überarbeitungen und Co-Programming bei weiteren Codeabschnitten.
 
 - Pascal 
