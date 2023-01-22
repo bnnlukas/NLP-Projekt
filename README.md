@@ -10,7 +10,7 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
 ## Idee
 Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den Chatbot verschiedene Informationen über die FIFA Weltmeisterschaften anzeigen lassen zu können.  
 
-![Alt text](demo.png)
+![Alt text](/static/images/demo.png)
 
 ## Mögliche Fragen an den Chatbot
 - Which team became ___ place in ___?
@@ -21,11 +21,15 @@ Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den
 - How many matches were played in the world-championship of ___?
 
 ## Ausführen des Chatbots
-- Klonen des Repositorys
-- Ausführen folgender Befehle:
+1. Klonen des Repositorys
+
+```git clone https://github.com/bnnlukas/NLP-Projekt.git```
+2. Ausführen folgender Befehle:
+
 ```pip install -r requirement.txt```
+
 ```python app.py```
-Wenn das Nltk-Package Stopwords nicht installiert wird, folgenden Code ausführen:
+- Wenn das Nltk-Package Stopwords nicht installiert wird, folgenden Code ausführen:
 ```
 import nltk
 import ssl

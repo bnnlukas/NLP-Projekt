@@ -33,11 +33,11 @@ data = {'query':['Which team became 6th place in 2006?', 'Which team was world c
 
         'On average, how many goals were scored in 1998?', 'How many goals were scored in the world-championship of 1962 on average?', 'What were the average goals scored in 1986?', 'What was the average number of goals scored in 1930?',
         'What was the average of goals in 1974?', 'How many goals have been scored on average in the year 2002? ', 'How many goals were scored on average in 1990?',
-        'In the worldcup 1962, how many goals have been scored on average?', 'What was the average number of goals scored in the year 1962?', 'What was the average number of goals in 1938?',
+        'In the worldcup 1962, how many goals have been scored on average?', 'What was the average number of goals scored in the year 1962?', 'What was the average number of goals in 1938?', 'What amount of goals was scored in 1990 in average?',
 
         'How many goals were scored 1950?', 'How many goals in the world-championship of 2010?', 'What is the number of overall goals in 2022?', 'How many goals were made in 2002?',
         'How many goals were accumulated in 2018?', 'What was the total of goals in 1960?', 'What was the total number of goals in 1930?',
-        'What is the sum of all goals scored in the year 1938?', 'What is the total number of goals scored in the worldcup of 1950?', 'How many goals were scored in the world cup in 1990?',
+        'What is the sum of all goals scored in the year 1938?', 'What is the total number of goals scored in the worldcup of 1950?', 'How many goals were scored in the world cup in 1990?', 'What amount of goals was scored in 1990?',
 
         'How many matches were played in the world-championship of 1930?','What is the number of matches played in 1954?','What was the amount of matches in the 2010 worldcup?', 'How many matches were played in Germany in 2006?',
         'What is the total number of games played in the year 2002?', 'What is the sum of matches played in 1974?', 'In 2018, how many matches took place?',
@@ -51,7 +51,7 @@ data = {'query':['Which team became 6th place in 2006?', 'Which team was world c
 
         'Thank you!', 'Thanks', 'Thank you very much!', 'Okay, thanksie!',
 
-        'Goodbye', 'Bye', 'See you!', 'Byebyeee'],
+        'Goodbye', 'Bye', 'See you!', 'Byebyeee', 'Have a nice day'],
 
 
        'category':['PlacementTeam','PlacementTeam','PlacementTeam','PlacementTeam',
@@ -68,11 +68,11 @@ data = {'query':['Which team became 6th place in 2006?', 'Which team was world c
 
        'year(avg)Goals','year(avg)Goals','year(avg)Goals','year(avg)Goals',
        'year(avg)Goals','year(avg)Goals','year(avg)Goals',
-       'year(avg)Goals','year(avg)Goals','year(avg)Goals',
+       'year(avg)Goals','year(avg)Goals','year(avg)Goals','year(avg)Goals',
 
        'yearGoals','yearGoals','yearGoals','yearGoals',
        'yearGoals','yearGoals','yearGoals',
-       'yearGoals','yearGoals','yearGoals',
+       'yearGoals','yearGoals','yearGoals','yearGoals',
 
        'yearMatches','yearMatches','yearMatches','yearMatches',
        'yearMatches','yearMatches','yearMatches', 
@@ -86,7 +86,7 @@ data = {'query':['Which team became 6th place in 2006?', 'Which team was world c
        
        'thankYou', 'thankYou', 'thankYou', 'thankYou', 
        
-       'bye', 'bye', 'bye', 'bye']}
+       'bye', 'bye', 'bye', 'bye', 'bye']}
 
 # 
 try:
