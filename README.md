@@ -7,6 +7,11 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
 
 - Aymane 
 - Jasmina 
+  - Überarbeitung und Erstellung von Intents, inklusive passender Antworten. Dabei lag der Fokus vor allem auf allgemeinen Intents, um dem Chatbot Charakter zu verleihen.
+   - Initialisierung der Named Entitity Recognition, anfänglich um Vereine als Organisationen zu markieren.
+  - Erstellung von weiteren Testdaten, um die Datengrundlage zu erweitern und so die Performance zu verbessern.
+  - Überarbeitungen und Co-Programming bei weiteren Codeabschnitten.
+
 - Pascal 
   - Recherche und Testing verschiedener Intentanalysis Ansätze, mitunter mit BERT. (siehe Branch "Pascal")
   - Vorbereitung der selbst erstellten Trainingsdaten
