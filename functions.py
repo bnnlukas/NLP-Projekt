@@ -101,9 +101,12 @@ def return_answer(input, intent):
                 output = 'In this year no World Cup was played. Please type in a correct year'
                 return output
             nation = [token.lemma_ for token in txt if token.ent_type_ == "GPE"]
-
-            team_pos = df['Position'].loc[df['Team'] == nation[0].capitalize()]
-            output = f'In the {year[0]} World Cup, {nation[0]} finished in the {team_pos.item()}th place'
+            if len(nation) > 1:
+                nation = [" ".join(nation)]
+            else:
+                pass
+            team_pos = df['Position'].loc[df['Team'] == nation[0].title()]
+            output = f'In the {year[0]} World Cup, {nation[0].title()} finished in the {team_pos.item()}th place'
 
         elif intent == 'greeting':
             output = f"""Hi, welcome to the FIFA World Cup Chatbot! I was created in the Natural Language 
