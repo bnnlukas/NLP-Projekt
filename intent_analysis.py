@@ -146,7 +146,6 @@ def get_intent(input):
     corpus = [" ".join(i) for i in train_cleaned_word2vec]
     vectorizer = TfidfVectorizer()
     vec_fit = vectorizer.fit(corpus)
-    print(corpus)
 
 
     # Define function to create word vectors given a cleaned piece of text

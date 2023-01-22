@@ -83,8 +83,15 @@ def return_answer(input, intent):
             pos_team = df['Team'].loc[df['Position'] == pos_int]
             output = f'At the World Cup in {year[0]}, the {pos_str[0]} place was taken by {pos_team.item()}.'
         
-        elif intent == 'PlacementTeam':
-            
+        elif intent == 'firstPlace':
+            year = [token.lemma_ for token in txt if token.ent_type_ == "DATE"]
+            try:
+                df = pd.read_csv(f'./data/FIFA - {int(year[0])}.csv')
+            except:
+                output = 'In this year no World Cup was played. Please type in a correct year'
+                return output
+            pos_team = df['Team'].loc[df['Position'] == 1]
+            output = f'At the World Cup in {year[0]}, {pos_team.item()} became the World Champion.'
         
         elif intent == 'TeamPlacement':
             year = [token.lemma_ for token in txt if token.ent_type_ == "DATE"]
