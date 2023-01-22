@@ -3,12 +3,15 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
 - Lukas
   - Websiteentwicklung, inkl. Zusammenführen der NLP-Pipeline und verbinden mit den Chatboteingaben
   - NER-Analyse, um auf Basis eines erkannten Intents die korrekten Daten aus den CSV-Files einzulesen und in Form einer Antwort an den Chatbot zu übergeben
+  - Entwicklung der Evaluierungsmethode für den Classifier
+
 - Aymane 
 - Jasmina 
 - Pascal 
   - Recherche und Testing verschiedener Intentanalysis Ansätze, mitunter mit BERT.
+  - Vorberieitung der Trainingsdaten
   - Entwicklung des Intent Detectors auf Basis eines Support Vector Classifiers, Word2Vec und Tf-idf und abschließendem Gridsearch und k-fold tuning mithilfe von den u.g. Quellen. 
-  - 
+  - Entwicklung der Evaluierungsmethode für den Classifier
   
 
 ## Idee
