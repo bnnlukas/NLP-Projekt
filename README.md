@@ -6,6 +6,10 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
   - Entwicklung der Evaluierungsmethode für den Classifier
 
 - Aymane 
+  - Allgemeine Recherche zum Aufbau eines NLP-Chatbots und der Entwicklung der NLP-Pipeline
+  - Zuständig für die Konzeption der Idee und des Anwendungsfalles
+  - Mithilfe bei der Erstellung der selbsterstellten Trainingsdaten
+  - Frontendentwicklung und Erstellung eines blueprint des Chat-Bots
 - Jasmina 
   - Überarbeitung und Erstellung von Intents, inklusive passender Antworten. Dabei lag der Fokus vor allem auf allgemeinen Intents, um dem Chatbot Charakter zu verleihen.
    - Initialisierung der Named Entitity Recognition, anfänglich um beispielsweise Vereine als Organisationen zu markieren, Vorbereitung für weitere Nutzung.
