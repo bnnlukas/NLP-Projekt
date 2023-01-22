@@ -8,9 +8,9 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
 - Aymane 
 - Jasmina 
 - Pascal 
-  - Recherche und Testing verschiedener Intentanalysis Ansätze, mitunter mit BERT.
+  - Recherche und Testing verschiedener Intentanalysis Ansätze, mitunter mit BERT. (siehe Branch "Pascal")
   - Vorbereitung der selbst erstellten Trainingsdaten
-  - Entwicklung des Intent Detectors auf Basis eines Support Vector Classifiers, Word2Vec und Tf-idf und abschließendem Gridsearch und k-fold tuning mithilfe von den u.g. Quellen. 
+  - Entwicklung des Intent Detectors auf Basis eines Support Vector Classifiers, Word2Vec und Tf-idf und abschließendem Gridsearch und k-fold tuning mithilfe der u.g. Quellen. 
   - Entwicklung der Evaluierungsmethode für den Classifier
   
 
@@ -117,6 +117,7 @@ Vorlage: https://github.com/patrickloeber/chatbot-deployment
 - Liu, Bing, and Ian Lane. "Attention-based recurrent neural network models for joint intent detection and slot filling." arXiv preprint arXiv:1609.01454 (2016).
 - https://www.atlantis-press.com/journals/hcis/125963694
 - Cahn, Jack. "CHATBOT: Architecture, design, & development." University of Pennsylvania School of Engineering and Applied Science Department of Computer and Information Science (2017).
+- https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
 
 **Spacy**
 - Numerizer: https://github.com/jaidevd/numerizer
