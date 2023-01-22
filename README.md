@@ -25,6 +25,20 @@ Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den
 - Ausführen folgender Befehle:
 ```pip install -r requirement.txt```
 ```python app.py```
+Wenn das Nltk-Package Stopwords nicht installiert wird, folgenden Code ausführen:
+```
+import nltk
+import ssl
+
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
+
+nltk.download('stopwords)
+```
 
 ## Natural Language Processing
 ### Pre-Processing
