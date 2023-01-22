@@ -7,11 +7,6 @@ from spacy.lang.en.examples import sentences
 from numerizer import numerize
 
 replace_dict = {
-    'won': 'became the 1st place',
-    'winner': '1st place',
-    'world-champion': '1st place',
-    'world champion': '1st place',
-    'champion ': '1st place',
     'last world championship': 'World Cup in 2022',
     'last world-championship': 'World Cup in 2022',
     'last world cup': 'World Cup in 2022',
@@ -38,7 +33,7 @@ def return_answer(input, intent):
             try:
                 host = df['HOST'].loc[df['YEAR'] == int(year[0])]
             except:
-                output = 'In this year no World Cup was played.'
+                output = 'In this year no World Cup was played. Please type in a correct year'
                 return output
             output = f'The host of the FIFA World Cup in {year[0]} was {host.item()}.'
 
@@ -48,7 +43,7 @@ def return_answer(input, intent):
             try:
                 matches = df['MATCHES PLAYED'].loc[df['YEAR'] == int(year[0])]
             except:
-                output = 'In this year no World Cup was played.'
+                output = 'In this year no World Cup was played. Please type in a correct year'
                 return output
             output = f'In {year[0]} a total of {matches.item()} matches were played.'
 
@@ -58,7 +53,7 @@ def return_answer(input, intent):
             try:
                 avgGoals = df['AVG GOALS PER GAME'].loc[df['YEAR'] == int(year[0])]
             except:
-                output = 'In this year no World Cup was played.'
+                output = 'In this year no World Cup was played. Please type in a correct year'
                 return output
             output = f'In {year[0]} on average {avgGoals.item()} goals were scored per game.'
 
@@ -68,7 +63,7 @@ def return_answer(input, intent):
             try:
                 avgGoals = df['GOALS SCORED'].loc[df['YEAR'] == int(year[0])]
             except:
-                output = 'In this year no World Cup was played.'
+                output = 'In this year no World Cup was played. Please type in a correct year'
                 return output
             output = f'In {year[0]} in total {avgGoals.item()} goals were scored.'
 
@@ -81,21 +76,25 @@ def return_answer(input, intent):
             try:
                 df = pd.read_csv(f'./data/FIFA - {int(year[0])}.csv')
             except:
-                output = 'In this year no World Cup was played.'
+                output = 'In this year no World Cup was played. Please type in a correct year'
                 return output
             pos_str = [token.lemma_ for token in txt if token.ent_type_ == "ORDINAL"]
             pos_int = int(re.search(r'\d+', pos_str[0]).group())
             pos_team = df['Team'].loc[df['Position'] == pos_int]
             output = f'At the World Cup in {year[0]}, the {pos_str[0]} place was taken by {pos_team.item()}.'
         
+        elif intent == 'PlacementTeam':
+            
+        
         elif intent == 'TeamPlacement':
             year = [token.lemma_ for token in txt if token.ent_type_ == "DATE"]
             try:
                 df = pd.read_csv(f'./data/FIFA - {int(year[0])}.csv')
             except:
-                output = 'In this year no World Cup was played.'
+                output = 'In this year no World Cup was played. Please type in a correct year'
                 return output
             nation = [token.lemma_ for token in txt if token.ent_type_ == "GPE"]
+
             team_pos = df['Position'].loc[df['Team'] == nation[0].capitalize()]
             output = f'In the {year[0]} World Cup, {nation[0]} finished in the {team_pos.item()}th place'
 
