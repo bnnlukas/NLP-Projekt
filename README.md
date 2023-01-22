@@ -3,9 +3,26 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
 - Lukas
   - Websiteentwicklung, inkl. Zusammenführen der NLP-Pipeline und verbinden mit den Chatboteingaben
   - NER-Analyse, um auf Basis eines erkannten Intents die korrekten Daten aus den CSV-Files einzulesen und in Form einer Antwort an den Chatbot zu übergeben
+  - Entwicklung der Evaluierungsmethode für den Classifier
+
 - Aymane 
+  - Allgemeine Recherche zum Aufbau eines NLP-Chatbots und der Entwicklung der NLP-Pipeline
+  - Mithilfe bei der Erstellung der selbsterstellten Trainingsdaten 
+  - Entwurf und Design eines blueprint und anschließende Entwicklung eines Beispiel Frontend
 - Jasmina 
+  - Überarbeitung und Erstellung von Intents, inklusive passender Antworten. Dabei lag der Fokus vor allem auf allgemeinen Intents, um dem Chatbot Charakter zu verleihen.
+   - Initialisierung der Named Entitity Recognition, anfänglich um beispielsweise Vereine als Organisationen zu markieren, Vorbereitung für weitere Nutzung.
+  - Erstellung von weiteren Testdaten, um die Datengrundlage zu erweitern und so die Performance zu verbessern.
+  - Sicherstellung passender Vorverarbeitungsschritte.
+  - Überarbeitungen und Co-Programming bei weiteren Codeabschnitten.
+
 - Pascal 
+  - Recherche und Testing verschiedener Intentanalysis Ansätze, mitunter mit BERT 
+  - Erstellung der Trainingsdaten auf Basis selbst geschriebener Nutzereingaben und Kategorien 
+  - Entwicklung des Intent Detectors auf Basis eines Support Vector Classifiers, Word2Vec und Tf-idf und abschließendem Gridsearch und k-fold tuning mithilfe der u.g. Quellen. 
+  - Entwicklung der Evaluierungsmethode für den Classifier
+  
+  
 
 ## Idee
 Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den Chatbot verschiedene Informationen über die FIFA Weltmeisterschaften anzeigen lassen zu können.  
@@ -110,6 +127,7 @@ Vorlage: https://github.com/patrickloeber/chatbot-deployment
 - Liu, Bing, and Ian Lane. "Attention-based recurrent neural network models for joint intent detection and slot filling." arXiv preprint arXiv:1609.01454 (2016).
 - https://www.atlantis-press.com/journals/hcis/125963694
 - Cahn, Jack. "CHATBOT: Architecture, design, & development." University of Pennsylvania School of Engineering and Applied Science Department of Computer and Information Science (2017).
+- https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
 
 **Spacy**
 - Numerizer: https://github.com/jaidevd/numerizer
