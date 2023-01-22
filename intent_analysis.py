@@ -109,7 +109,7 @@ def get_intent(input):
     nlp = spacy.load('en_core_web_sm')
     punctuations = string.punctuation
 
-    #remove pronouns, stopwords, and puncuation as a definied function 
+    #remove pronouns, stopwords, and punctuation as a defined function 
     def cleanup_text(docs, logging=False):
         texts = [] 
         counter = 1
@@ -149,7 +149,7 @@ def get_intent(input):
     print(corpus)
 
 
-    # Define function to create word vectors given a cleaned piece of text.
+    # Define function to create word vectors given a cleaned piece of text
     def create_average_vec(doc):
         average = np.zeros(len(vectorizer.get_feature_names()), dtype='float32')
         num_words = 0.
