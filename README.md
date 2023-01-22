@@ -138,4 +138,7 @@ Vorlage: https://github.com/patrickloeber/chatbot-deployment
 **Websiteentwicklung**
 - https://github.com/patrickloeber/chatbot-deployment
 
+**Bilder**
+- https://wallpapersden.com/2022-fifa-world-cup-hd-wallpaper/
+
 
