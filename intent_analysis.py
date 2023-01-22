@@ -197,6 +197,3 @@ def get_intent(input):
     return intent
 
 # Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
-
-
-
