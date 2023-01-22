@@ -20,6 +20,12 @@ Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den
 - How many goals were scored ___?
 - How many matches were played in the world-championship of ___?
 
+## Ausführen des Chatbots
+- Klonen des Repositorys
+- Ausführen folgender Befehle:
+```pip install -r requirement.txt```
+```python app.py```
+
 ## Natural Language Processing
 ### Pre-Processing
 Der textuelle Input des Users wird in den Vorverarbeitungsschritten in für die Maschinen verständliche Sprache umgewandelt. Dafür wird der Text in Kleinschreibung (lowercase) umformuliert, um so eine Vereinheitlichung des Texts zu erwirken. Zudem werden jegliche Satzzeichen entfernt.
