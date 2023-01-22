@@ -1,6 +1,8 @@
 # Entwicklung eines Chatbots für Themen rund um die Fußball Weltmeisterschaften
-Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Processing (WWI20DSA) mit den Teilnehmern:
+Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Processing (WWI20DSA) mit den Teilnehmern und den erledigten Aufgaben:
 - Lukas
+  - Websiteentwicklung, inkl. Zusammenführen der NLP-Pipeline und verbinden mit den Chatboteingaben
+  - NER-Analyse, um auf Basis eines erkannten Intents die korrekten Daten aus den CSV-Files einzulesen und in Form einer Antwort an den Chatbot zu übergeben
 - Aymane 
 - Jasmina 
 - Pascal 
@@ -10,6 +12,13 @@ Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den
 
 ![Alt text](demo.png)
 
+## Mögliche Fragen an den Chatbot
+- Which team became ___ place in ___?
+- On which position was ___ in ___?
+- Who hosted the world cup in the year ___?
+- On average, how many goals were scored in ___?
+- How many goals were scored ___?
+- How many matches were played in the world-championship of ___?
 
 ## Natural Language Processing
 ### Pre-Processing
@@ -17,10 +26,11 @@ Der textuelle Input des Users wird in den Vorverarbeitungsschritten in für die 
 
 Das SpaCy Modell "en_core_web_sm" wird genutzt, um die Stopwords zu entfernen. Sogenannte Stopwords bezeichnen für die inhaltliche Aussagekraft des Texts nicht aufwertende Begriffe, wie beispielsweise Artikel, Konjunktionen, usw. die dann entfernt werden, um wertvolleren Text zu erhalten.
 
-
-
-### Named Entity Recognition
 ### Numerizer 
+Spacy Extension, um Zahlen in englischer Sprache in Integer, bzw. Floats umzuwandeln.
+- one -> 1
+- Umwandlung auch bei abgewandelten Formen
+  - the second -> the 2nd
 ### Intentanalyse
 ***„Wie können wir mit unserem Chatbot unseren Usern im Kontext unserer Produkte und der Customer Journeys helfen?“***
 - Herausfinden was der User möchte
@@ -38,9 +48,13 @@ Das SpaCy Modell "en_core_web_sm" wird genutzt, um die Stopwords zu entfernen. S
 
 **k-fold**  ist eine Technik zur Bewertung der Leistung eines maschinellen Lernmodells, bei der die Daten in k Teilmengen aufgeteilt werden, das Modell auf k-1 der Teilmengen trainiert und auf der verbleibenden Teilmenge bewertet wird. Der Prozess wird k-mal wiederholt und die Leistung wird über alle k Iterationen gemittelt.
 
-
-
-
+### Named Entity Recognition
+Erkennen einzelner Wortarten, um auf Basis eines erkannten Intents die richtigen Daten aus den CSV-Files einzulesen.
+Folgende Wortarten wurden dazu genutzt und mithilfe von Spacy erkannt:
+- DATE: Erkennen der Jahreszahl in der eine Weltmeisterschaft stattgefunden hat
+- ORDINAL: Erkennen der Platzierung eines Landes bei einer Weltmeisterschaft
+  - Zur Erkennung mussten teilweise die Wörter zunächst mithilfe der Spacyextension Numerizer umgewandelt und die Zahlenwerte daraus extrahiert werden (first -> 1st -> 1)
+ - GPE (Geopolitical entity): Erkennen eines bestimmten Landes in dem Satz
 
 ## Chatbot
 - ~Open-Source Rasa Chatbot (Fragen ob Alternative verwendet werden soll)~ -> eigenes Modell entwickelt und trainiert
@@ -50,8 +64,14 @@ Das SpaCy Modell "en_core_web_sm" wird genutzt, um die Stopwords zu entfernen. S
 - Docker
 
 ### Backend mit Python-Flask
+- Anbindung der Dataprocessing-Funktionen, um Intents zu erkennen und die Daten aus den CSV-Files zu ziehen
+- Datentransfer mithilfe von JSON-Files, um die Kommunikation zwischen dem Javascriptchatbot und den Pythonfunktionen zu ermöglichen
 
-### Frontend
+### Frontend (HTML, CSS, Javascript)
+Vorlage: https://github.com/patrickloeber/chatbot-deployment
+- Zulassen von Userinput durch den Chatbot und weitergeben dieses Inputs an die Pythonfunktionen
+- Zurückgeben der Antwort des Chatbots und Darstellen in dem zugehörigen Fenster
+
 ### Funktionen des Chatbots
 - Visualisierung der Ausgabe
 - Interaktion: Kunde/Anwender kann dem Chatbot Fragen stellen welche vom Chatbot beantwortet werden
@@ -61,10 +81,17 @@ Das SpaCy Modell "en_core_web_sm" wird genutzt, um die Stopwords zu entfernen. S
 - Chatbot akzeptiert lediglich die englische Sprache
 - Intentanalyse: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage diesbezüglich machen 
 
-
 ### Quellen
 **Intentanalyse**
 - Liu, Bing, and Ian Lane. "Attention-based recurrent neural network models for joint intent detection and slot filling." arXiv preprint arXiv:1609.01454 (2016).
 - https://www.atlantis-press.com/journals/hcis/125963694
 - Cahn, Jack. "CHATBOT: Architecture, design, & development." University of Pennsylvania School of Engineering and Applied Science Department of Computer and Information Science (2017).
+
+**Spacy**
+- Numerizer: https://github.com/jaidevd/numerizer
+- https://spacy.io/usage/linguistic-features
+
+**Websiteentwicklung**
+- https://github.com/patrickloeber/chatbot-deployment
+
 
