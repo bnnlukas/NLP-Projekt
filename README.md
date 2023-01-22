@@ -6,6 +6,10 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
 - Aymane 
 - Jasmina 
 - Pascal 
+  - Recherche und Testing verschiedener Intentanalysis Ansätze, mitunter mit BERT.
+  - Entwicklung des Intent Detectors auf Basis eines Support Vector Classifiers, Word2Vec und Tf-idf und abschließendem Gridsearch und k-fold tuning mithilfe von den u.g. Quellen. 
+  - 
+  
 
 ## Idee
 Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den Chatbot verschiedene Informationen über die FIFA Weltmeisterschaften anzeigen lassen zu können.  
