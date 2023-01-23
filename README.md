@@ -134,6 +134,9 @@ Vorlage: https://github.com/patrickloeber/chatbot-deployment
 - Numerizer: https://github.com/jaidevd/numerizer
 - https://spacy.io/usage/linguistic-features
 
+**Datengrundlage**
+- https://www.kaggle.com/datasets/iamsouravbanerjee/fifa-football-world-cup-dataset?select=FIFA+-+2022.csv
+
 **Websiteentwicklung**
 - https://github.com/patrickloeber/chatbot-deployment
 
