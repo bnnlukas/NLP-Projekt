@@ -141,7 +141,7 @@ def get_intent(input):
             counter += 1
         return sentences #list of lists of words for the w2v
     train_cleaned_word2vec = cleanup_text_word2vec(df['query'], logging=True)
-    
+
     #creating a corpus by joining list of lists of words and fit to tf-idf vectorizer (convert to numerical representation)
     corpus = [" ".join(i) for i in train_cleaned_word2vec]
     vectorizer = TfidfVectorizer()
