@@ -9,16 +9,15 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
 - Aymane 
   - Allgemeine Recherche zum Aufbau eines NLP-Chatbots und der Entwicklung der NLP-Pipeline
   - Mithilfe bei der Erstellung der selbsterstellten Trainingsdaten 
-  - Entwurf und Design eines blueprint und anschließende Entwicklung eines Beispiel Frontend
+  - Entwurf und Design eines blueprint und anschließende Entwicklung eines Beispiel Frontend (Layout)
 - Jasmina 
-  - Überarbeitung und Erstellung von Intents, inklusive passender Antworten. Dabei lag der Fokus vor allem auf allgemeinen Intents, um dem Chatbot Charakter zu verleihen.
-   - Initialisierung der Named Entitity Recognition, anfänglich um beispielsweise Vereine als Organisationen zu markieren, Vorbereitung für weitere Nutzung.
+  - Überarbeitung und Erstellung von Intents, inklusive passender Antworten. Dabei lag der Fokus vor allem auf allgemeinen Intents, um dem Chatbot Charakter zu verleihen. 
+   - Initialisierung der Named Entitity Recognition, anfänglich um beispielsweise Vereine als Organisationen zu markieren, Vorbereitung für weitere Nutzung. (nicht mehr verwendet)
   - Erstellung von weiteren Testdaten, um die Datengrundlage zu erweitern und so die Performance zu verbessern.
   - Sicherstellung passender Vorverarbeitungsschritte.
-  - Überarbeitungen und Co-Programming bei weiteren Codeabschnitten.
-
+  
 - Pascal 
-  - Recherche und Testing verschiedener Intentanalysis Ansätze, mitunter mit BERT 
+  - Recherche und Testing verschiedener Intentanalysis Ansätze, mitunter mit BERT (nicht mehr verwendet)
   - Erstellung der Trainingsdaten auf Basis selbst geschriebener Nutzereingaben und Kategorien 
   - Entwicklung des Intent Detectors auf Basis eines Support Vector Classifiers, Word2Vec und Tf-idf und abschließendem Gridsearch und k-fold tuning mithilfe der u.g. Quellen. 
   - Entwicklung der Evaluierungsmethode für den Classifier
