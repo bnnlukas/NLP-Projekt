@@ -18,7 +18,7 @@ import nltk
 import ssl
 stopwords = stopwords.words('english')
 
-
+#Loading the dataset consisting of various questions related to football world-championships
 data = {'query':['Who became the second place in 1974?', 'Which team became 6th place in 2006?', 'Which team was world champion in the year 2010?', 'Who won in 1990?', 'Who was the winner in 1934?',
         'Who became the world champion in 1938?', 'Which team won in 1974?', 'Which team was on the 5th place in the worldcup in 1950?',
         'Who got the 2nd place in 1986?', 'Who was the world-champion in the world-championship of 2018?', 'Which team is the champion of the year 2002?',
@@ -109,23 +109,23 @@ def get_intent(input):
     nlp = spacy.load('en_core_web_sm')
     punctuations = string.punctuation
 
-    #remove pronouns, stopwords, and punctuation as a defined function 
+    #clean text using spacy (lemma, lowercasing, removing stopwords)
     def cleanup_text(docs, logging=False):
         texts = [] 
         counter = 1
         for doc in docs:
             if counter % 1000 == 0 and logging:
-                print("Processed %d out of %d documents." % (counter, len(docs)))
+                print(" %d out of %d documents." % (counter, len(docs)))
             counter += 1
             doc = nlp(doc, disable=['parser', 'ner'])
-            tokens = [tok.lemma_.lower().strip() for tok in doc if tok.lemma_ != '-PRON-'] #Lemmatization and lowercasing
+            tokens = [tok.lemma_.lower().strip() for tok in doc] #Lemmatization and lowercasing
             tokens = [tok for tok in tokens if tok not in stopwords and tok not in punctuations] #removing stopwords
             tokens = ' '.join(tokens)
             texts.append(tokens)
         return pd.Series(texts)
     train_cleaned = cleanup_text(df['query'], logging=True)
 
-        # further cleaning to apply a word2vec model
+        # further cleaning the text to apply a word2vec model
     def cleanup_text_word2vec(docs, logging=False):
         sentences = []
         counter = 1
@@ -135,11 +135,11 @@ def get_intent(input):
             doc = nlp(doc, disable=['tagger'])
             doc = " ".join([tok.lemma_.lower() for tok in doc])
             doc = re.split("[\.?!;] ", doc) #splitting text into sentences and words
-            doc = [re.sub("[\.,;:!?]", "", sent) for sent in doc]
+            doc = [re.sub("[\.,;:!?]", "", sent) for sent in doc] #substitute punctuations 
             doc = [sent.split() for sent in doc]
             sentences += doc
             counter += 1
-        return sentences #list of lists
+        return sentences #list of lists of words for the w2v
     train_cleaned_word2vec = cleanup_text_word2vec(df['query'], logging=True)
     
     #creating a corpus by joining list of lists of words and fit to tf-idf vectorizer (convert to numerical representation)
@@ -148,22 +148,27 @@ def get_intent(input):
     vec_fit = vectorizer.fit(corpus)
 
 
-    # Define function to create word vectors given a cleaned piece of text
-    def create_average_vec(doc):
+    # Define function to create word vector representation of a given cleaned piece of text by averaging the tf-idf vectors
+    # take in cleaned piece of text
+    def create_average_vec(doc): 
+        #initialize empty average vector of same length as number of features in vec_fit
         average = np.zeros(len(vectorizer.get_feature_names()), dtype='float32')
         num_words = 0.
+        #iterate over each word in doc and add tf-idf vector to average vector
         for word in doc.split():
-            average = np.add(average, vec_fit.transform([word]).toarray())
+            average = np.add(average, vec_fit.transform([word]).toarray()) 
             num_words += 1.
         if num_words != 0.:
+            #divide average vector by number of words to get average vector repr. of text
             average = np.divide(average, num_words)
-        return average
+        return average #return converted cleaned data to use as input for SVC Model
     
     # Create word vectors for entire cleaned dataset
-    train_cleaned_vec = np.zeros((df.shape[0], len(vectorizer.get_feature_names())), dtype="float32")  # 19579 x 300
+    train_cleaned_vec = np.zeros((df.shape[0], len(vectorizer.get_feature_names())), dtype="float32") 
     for i in range(len(train_cleaned)):
         train_cleaned_vec[i] = create_average_vec(train_cleaned[i])
     
+    #encode target variable "category" into numerical values to be used as input for SVC Model.
     Encoder = LabelEncoder()
     y_train = Encoder.fit_transform(df['category'])
 
@@ -175,9 +180,11 @@ def get_intent(input):
     #svclassifier.fit(train_cleaned_vec, y_train)
     kfold = KFold(n_splits=5, shuffle=True)
     grid_search = GridSearchCV(svclassifier, param_grid, cv=kfold, refit=True, verbose=3)
+    
+    #perform grid search by training model with different combinations of specified parameters and evaluate performance
     grid_search.fit(train_cleaned_vec, y_train)
 
-    # Train the model with the best hyperparameters
+    # Train the model with the best hyperparameters from gridsearch using the cleaned and vectorized data
     svclassifier = SVC(C=grid_search.best_params_['C'],
                    gamma=grid_search.best_params_['gamma'],
                    kernel=grid_search.best_params_['kernel'])
@@ -190,8 +197,10 @@ def get_intent(input):
     cleanup_vec = np.zeros((1, len(vectorizer.get_feature_names())), dtype="float32")  # 19579 x 300
     for i in range(len(cleanup)):
         cleanup_vec[i] = create_average_vec(cleanup[i])
+    # predict category of new input with the trained model    
     y = svclassifier.predict([cleanup_vec[0]])
 
+    #get category of input in original form (not in encoded form)
     intent = intent_categories[int(y)]
     print(intent)
     return intent
