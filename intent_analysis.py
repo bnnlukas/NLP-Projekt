@@ -100,7 +100,7 @@ else:
 def train_model():
     trained_model = ''
     return trained_model
-#
+# 
 def get_intent(input):
     df = pd.DataFrame(data)
     
