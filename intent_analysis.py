@@ -148,6 +148,7 @@ def get_intent(input):
     vec_fit = vectorizer.fit(corpus)
 
 
+
     # Define function to create word vector representation of a given cleaned piece of text by averaging the tf-idf vectors
     # take in cleaned piece of text
     def create_average_vec(doc): 
