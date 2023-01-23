@@ -2,8 +2,9 @@
 Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Processing (WWI20DSA) mit den Teilnehmern und den erledigten Aufgaben:
 - Lukas
   - Websiteentwicklung, inkl. Zusammenführen der NLP-Pipeline und verbinden mit den Chatboteingaben
-  - NER-Analyse, um auf Basis eines erkannten Intents die korrekten Daten aus den CSV-Files einzulesen und in Form einer Antwort an den Chatbot zu übergeben
-  - Entwicklung der Evaluierungsmethode für den Classifier
+  - NER-Analyse, um auf Basis eines erkannten Intents die korrekten Daten aus den CSV-Files einzulesen und in Form einer Antwort an den Chatbot zu übergeben (inkl. Einsatz der Numerizerextension)
+    - Einsatz eines Replace-Dictionaries, um Eingabevariationen des Users in für die NER verständliche Sprache umzuwandeln
+  - Evaluation des SVClassifiers mithilfe einer Confusion Matrix, um die Qualität der Intentanalyse zu messen
 
 - Aymane 
   - Allgemeine Recherche zum Aufbau eines NLP-Chatbots und der Entwicklung der NLP-Pipeline
@@ -41,6 +42,7 @@ Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den
 1. Klonen des Repositorys
 
 ```git clone https://github.com/bnnlukas/NLP-Projekt.git```
+
 2. Ausführen folgender Befehle:
 
 ```pip install -r requirement.txt```
@@ -135,5 +137,8 @@ Vorlage: https://github.com/patrickloeber/chatbot-deployment
 
 **Websiteentwicklung**
 - https://github.com/patrickloeber/chatbot-deployment
+
+**Bilder**
+- https://wallpapersden.com/2022-fifa-world-cup-hd-wallpaper/
 
 
