@@ -19,7 +19,7 @@ import ssl
 stopwords = stopwords.words('english')
 
 
-data = {'query':['Which team became 6th place in 2006?', 'Which team was world champion in the year 2010?', 'Who won in 1990?', 'Who was the winner in 1934?',
+data = {'query':['Who became the second place in 1974?', 'Which team became 6th place in 2006?', 'Which team was world champion in the year 2010?', 'Who won in 1990?', 'Who was the winner in 1934?',
         'Who became the world champion in 1938?', 'Which team won in 1974?', 'Which team was on the 5th place in the worldcup in 1950?',
         'Who got the 2nd place in 1986?', 'Who was the world-champion in the world-championship of 2018?', 'Which team is the champion of the year 2002?',
 
@@ -54,7 +54,7 @@ data = {'query':['Which team became 6th place in 2006?', 'Which team was world c
         'Goodbye', 'Bye', 'See you!', 'Byebyeee', 'Have a nice day'],
 
 
-       'category':['PlacementTeam','PlacementTeam','PlacementTeam','PlacementTeam',
+       'category':['PlacementTeam', 'PlacementTeam','PlacementTeam','PlacementTeam','PlacementTeam',
        'PlacementTeam','PlacementTeam','PlacementTeam',
        'PlacementTeam','PlacementTeam','PlacementTeam',
 
@@ -193,7 +193,7 @@ def get_intent(input):
     y = svclassifier.predict([cleanup_vec[0]])
 
     intent = intent_categories[int(y)]
-
+    print(intent)
     return intent
 
 # Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
