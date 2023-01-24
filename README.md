@@ -45,7 +45,9 @@ Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den
 
 2. Ausführen folgender Befehle:
 
-```pip install -r requirement.txt```
+```cd NLP-Projekt```
+
+```pip install -r requirements.txt```
 
 ```python app.py```
 - Wenn das Nltk-Package Stopwords nicht installiert wird, folgenden Code ausführen:
