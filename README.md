@@ -4,8 +4,8 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
   - Websiteentwicklung, inkl. Zusammenführen der NLP-Pipeline und verbinden mit den Chatboteingaben
   - NER-Analyse, um auf Basis eines erkannten Intents die korrekten Daten aus den CSV-Files einzulesen und in Form einer Antwort an den Chatbot zu übergeben (inkl. Einsatz der Numerizerextension)
     - Einsatz eines Replace-Dictionaries, um Eingabevariationen des Users in für die NER verständliche Sprache umzuwandeln
-  - Evaluation des SVClassifiers mithilfe einer Confusion Matrix, um die Qualität der Intentanalyse zu messen
-  - Exportieren des Vectorizers und des SVClasssifiers als Pickle-File, um die Antwortgeschwindigkeit zu verbessern
+  - Evaluation des SVClassifiers mithilfe einer Confusion Matrix, um die Qualität der Intentdetection zu messen
+  - Exportieren des Vectorizers und des SVClassifiers als Pickle-File, um die Antwortgeschwindigkeit zu verbessern und das Modell nur beim Neuladen der Website neu zu trainieren
 
 - Aymane 
   - Allgemeine Recherche zum Aufbau eines NLP-Chatbots und der Entwicklung der NLP-Pipeline
