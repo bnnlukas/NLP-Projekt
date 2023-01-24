@@ -17,77 +17,6 @@ import ssl
 import pickle
 stopwords = stopwords.words('english')
 
-#Loading the dataset consisting of various questions related to football world-championships
-data = {'query':['Who became the second place in 1974?', 'Which team became 6th place in 2006?', 'Which team was world champion in the year 2010?', 'Who won in 1990?', 'Who was the winner in 1934?',
-        'Who became the world champion in 1938?', 'Which team won in 1974?', 'Which team was on the 5th place in the worldcup in 1950?',
-        'Who got the 2nd place in 1986?', 'Who was the world-champion in the world-championship of 2018?', 'Which team is the champion of the year 2002?',
-
-        'On which position was Germany in 1986?', 'Brasil got which place in 2014?', 'Which place was Morroco on in 2022?', 'What was the ranking of Sweden in 1958?', 
-        'On which place did the Netherlands land on in the year 1974?', 'What was the placement of Italy in 1938?', 'What ranking did England have in the world-championship of 2010?',
-        'What was Spain\'s ranking in 2018?', 'What was the placement of Poland in 2002?', 'Which place did France get in the worldcup 2018?',
-
-        'Who hosted the world cup in the year 2018?', 'Which nation was the host of the world cup in 1950?', 'Where was the world cup 1958?', 'Where was the world cup held in 1958?',
-        'Who was the host of the world-championship in 2002?', 'Which country hosted the world cup in the year 1978?', 'Where was the world cup held in 1990?',
-        'Where did the world cup take place in the year 2006?', 'Who has hosted the worldcup in 1974?', 'In which country did the world cup take place in 2022?',
-
-        'On average, how many goals were scored in 1998?', 'How many goals were scored in the world-championship of 1962 on average?', 'What were the average goals scored in 1986?', 'What was the average number of goals scored in 1930?',
-        'What was the average of goals in 1974?', 'How many goals have been scored on average in the year 2002? ', 'How many goals were scored on average in 1990?',
-        'In the worldcup 1962, how many goals have been scored on average?', 'What was the average number of goals scored in the year 1962?', 'What was the average number of goals in 1938?', 'What amount of goals was scored in 1990 in average?',
-
-        'How many goals were scored 1950?', 'How many goals in the world-championship of 2010?', 'What is the number of overall goals in 2022?', 'How many goals were made in 2002?',
-        'How many goals were accumulated in 2018?', 'What was the total of goals in 1960?', 'What was the total number of goals in 1930?',
-        'What is the sum of all goals scored in the year 1938?', 'What is the total number of goals scored in the worldcup of 1950?', 'How many goals were scored in the world cup in 1990?', 'What amount of goals was scored in 1990?',
-
-        'How many matches were played in the world-championship of 1930?','What is the number of matches played in 1954?','What was the amount of matches in the 2010 worldcup?', 'How many matches were played in Germany in 2006?',
-        'What is the total number of games played in the year 2002?', 'What is the sum of matches played in 1974?', 'In 2018, how many matches took place?',
-        'How many matches have been played in 1950?', 'How many games were played in 1974?', 'What is the total of matches played in 1978?',
-
-        'Who was the winner of the world cup in 1990?','Name the champion of 2000?','Which nation was the world champion in the year 2014?','Which nation was the world-champion in the year 2014?','Which team was the first place in 2002?', 'Who won in 2010?',
-        'Who won the world cup in 1974?', 'Who was world-champion in 1950?', 'Who got the first place of the world cup in 2002?',
-        'Who was the winner of the world-championship in 2006?', 'Who was the champion of the worldcup in 2010?',
-
-        'Hello.', 'Hellooo', 'Hi!', 'Hey,', 'Heyyy,', 'Good day!', 'Good evening.',
-
-        'Thank you!', 'Thanks', 'Thank you very much!', 'Okay, thanksie!',
-
-        'Goodbye', 'Bye', 'See you!', 'Byebyeee', 'Have a nice day'],
-
-
-       'category':['PlacementTeam', 'PlacementTeam','PlacementTeam','PlacementTeam','PlacementTeam',
-       'PlacementTeam','PlacementTeam','PlacementTeam',
-       'PlacementTeam','PlacementTeam','PlacementTeam',
-
-       'TeamPlacement','TeamPlacement','TeamPlacement','TeamPlacement',
-       'TeamPlacement','TeamPlacement','TeamPlacement',
-       'TeamPlacement','TeamPlacement','TeamPlacement',
-
-       'YearHost','YearHost','YearHost','YearHost',
-       'YearHost','YearHost','YearHost',
-       'YearHost','YearHost','YearHost',
-
-       'year(avg)Goals','year(avg)Goals','year(avg)Goals','year(avg)Goals',
-       'year(avg)Goals','year(avg)Goals','year(avg)Goals',
-       'year(avg)Goals','year(avg)Goals','year(avg)Goals','year(avg)Goals',
-
-       'yearGoals','yearGoals','yearGoals','yearGoals',
-       'yearGoals','yearGoals','yearGoals',
-       'yearGoals','yearGoals','yearGoals','yearGoals',
-
-       'yearMatches','yearMatches','yearMatches','yearMatches',
-       'yearMatches','yearMatches','yearMatches', 
-       'yearMatches','yearMatches','yearMatches', 
-
-       'firstPlace', 'firstPlace', 'firstPlace','firstPlace','firstPlace','firstPlace', 
-       'firstPlace','firstPlace','firstPlace',
-       'firstPlace', 'firstPlace',
-       
-       'greeting', 'greeting', 'greeting', 'greeting', 'greeting', 'greeting','greeting',
-       
-       'thankYou', 'thankYou', 'thankYou', 'thankYou', 
-       
-       'bye', 'bye', 'bye', 'bye', 'bye']}
-
-# 
 try:
     _create_unverified_https_context = ssl._create_unverified_context
 except AttributeError:
@@ -96,7 +25,6 @@ else:
     ssl._create_default_https_context = _create_unverified_https_context
 
 def get_intent(input):
-    df = pd.DataFrame(data)
     
     #necessary nltk and spacy package for the upcoming cleanup part
     nltk.download('stopwords')
@@ -117,7 +45,6 @@ def get_intent(input):
             tokens = ' '.join(tokens)
             texts.append(tokens)
         return pd.Series(texts)
-    train_cleaned = cleanup_text(df['query'], logging=True)
 
         # further cleaning the text to apply a word2vec model
     def cleanup_text_word2vec(docs, logging=False):
@@ -134,20 +61,17 @@ def get_intent(input):
             sentences += doc
             counter += 1
         return sentences #list of lists of words for the w2v
-    train_cleaned_word2vec = cleanup_text_word2vec(df['query'], logging=True)
 
-    #creating a corpus by joining list of lists of words and fit to tf-idf vectorizer (convert to numerical representation)
-    corpus = [" ".join(i) for i in train_cleaned_word2vec]
+    # load the model from disk
     vectorizer = TfidfVectorizer()
-    vec_fit = vectorizer.fit(corpus)
-
-
+    filename_vecfit = 'vec_fit.sav'
+    vec_fit = pickle.load(open(filename_vecfit, 'rb'))
 
     # Define function to create word vector representation of a given cleaned piece of text by averaging the tf-idf vectors
     # take in cleaned piece of text
     def create_average_vec(doc): 
         #initialize empty average vector of same length as number of features in vec_fit
-        average = np.zeros(len(vectorizer.get_feature_names()), dtype='float32')
+        average = np.zeros(111, dtype='float32')
         num_words = 0.
         #iterate over each word in doc and add tf-idf vector to average vector
         for word in doc.split():
@@ -157,25 +81,17 @@ def get_intent(input):
             #divide average vector by number of words to get average vector repr. of text
             average = np.divide(average, num_words)
         return average #return converted cleaned data to use as input for SVC Model
-    
-    # Create word vectors for entire cleaned dataset
-    train_cleaned_vec = np.zeros((df.shape[0], len(vectorizer.get_feature_names())), dtype="float32") 
-    for i in range(len(train_cleaned)):
-        train_cleaned_vec[i] = create_average_vec(train_cleaned[i])
-    
-    #encode target variable "category" into numerical values to be used as input for SVC Model.
-    Encoder = LabelEncoder()
-    y_train = Encoder.fit_transform(df['category'])
 
     # load the model from disk
-    filename = 'finalized_model.sav'
-    loaded_model = pickle.load(open(filename, 'rb'))
+    filename_model = 'intent_detection_model.sav'
+    loaded_model = pickle.load(open(filename_model, 'rb'))
 
     cleanup = cleanup_text([input], logging=True)
-    intent_categories = list(Encoder.classes_)
+    intent_categories = ['PlacementTeam', 'TeamPlacement', 'YearHost', 'bye', 'firstPlace', 'greeting', 'thankYou', 'year(avg)Goals', 'yearGoals', 'yearMatches']
 
     # converting the cleaned data to vector
-    cleanup_vec = np.zeros((1, len(vectorizer.get_feature_names())), dtype="float32")  # 19579 x 300
+    cleanup_vec = np.zeros((1, 111), dtype="float32")  # 19579 x 300
+    print(cleanup_vec)
     for i in range(len(cleanup)):
         cleanup_vec[i] = create_average_vec(cleanup[i])
     # predict category of new input with the trained model    
@@ -183,7 +99,6 @@ def get_intent(input):
 
     #get category of input in original form (not in encoded form)
     intent = intent_categories[int(y)]
-    print(intent)
     return intent
 
 # Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)

@@ -187,8 +187,12 @@ def train_model():
     svclassifier.fit(train_cleaned_vec, y_train)
 
     # save the model to disk
-    filename = 'intent_detection_model.sav'
-    pickle.dump(svclassifier, open(filename, 'wb'))
+    filename_model = 'intent_detection_model.sav'
+    pickle.dump(svclassifier, open(filename_model, 'wb'))
+
+    # save the model to disk
+    filename_vecfit = 'vec_fit.sav'
+    pickle.dump(vec_fit, open(filename_vecfit, 'wb'))
 
     return 
 # Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
