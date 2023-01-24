@@ -92,28 +92,28 @@ SpaCy Extension, um Zahlen in englischer Sprache in Integer, bzw. Floatwerte umz
 
 **TF-IDF** ist eine Technik zur Darstellung der Bedeutung von Wörtern in einem Dokument. Die Idee hinter TF-IDF ist es, Wörter danach zu gewichten, wie häufig sie in einem Dokument vorkommen, wobei auch berücksichtigt wird, wie häufig sie in einem Korpus von Dokumenten vorkommen. Der TF-IDF-Wert eines Wortes ist das Produkt aus seiner Termfrequenz (TF) und seiner inversen Dokumentenfrequenz (IDF). Wörter, die nur in einem bestimmten Dokument vorkommen, haben einen höheren TF-IDF-Wert als Wörter, die in vielen Dokumenten vorkommen.
 
-**gridsearch** ist eine Funktion, die dabei hilft, die beste Kombination von Hyperparametern für ein bestimmtes Modell des maschinellen Lernens zu finden. Dazu wird das Modell mit allen möglichen Kombinationen von Hyperparameterwerten trainiert und die Kombination zurückgegeben, die die beste Punktzahl gemäß der angegebenen Scoring-Metrik ergibt.
+**Gridsearch** ist eine Funktion, die dabei hilft, die beste Kombination von Hyperparametern für ein bestimmtes Modell des maschinellen Lernens zu finden. Dazu wird das Modell mit allen möglichen Kombinationen von Hyperparameterwerten trainiert und die Kombination zurückgegeben, die die beste Punktzahl gemäß der angegebenen Scoring-Metrik ergibt.
 
-**k-fold**  ist eine Technik zur Bewertung der Leistung eines maschinellen Lernmodells, bei der die Daten in k Teilmengen aufgeteilt werden, das Modell auf k-1 der Teilmengen trainiert und auf der verbleibenden Teilmenge bewertet wird. Der Prozess wird k-mal wiederholt und die Leistung wird über alle k Iterationen gemittelt.
+**k-fold** ist eine Technik zur Bewertung der Leistung eines maschinellen Lernmodells, bei der die Daten in k Teilmengen aufgeteilt werden, das Modell auf k-1 der Teilmengen trainiert und auf der verbleibenden Teilmenge bewertet wird. Der Prozess wird k-mal wiederholt und die Leistung wird über alle k Iterationen gemittelt.
 
 ### Named Entity Recognition
-Erkennen einzelner Wortarten, um auf Basis eines erkannten Intents die richtigen Daten aus den CSV-Files einzulesen.
-Folgende Wortarten wurden dazu genutzt und mithilfe von Spacy erkannt:
-- DATE: Erkennen der Jahreszahl in der eine Weltmeisterschaft stattgefunden hat
+Erkennen einzelner Entitäten, um auf Basis eines erkannten Intents die richtigen Daten aus den CSV-Files einzulesen.
+Folgende Entitäten wurden dazu genutzt und mithilfe von SpaCy erkannt:
+- DATE: Erkennen der Jahreszahl, in der eine Weltmeisterschaft stattgefunden hat
 - ORDINAL: Erkennen der Platzierung eines Landes bei einer Weltmeisterschaft
-  - Zur Erkennung mussten teilweise die Wörter zunächst mithilfe der Spacyextension Numerizer umgewandelt und die Zahlenwerte daraus extrahiert werden (first -> 1st -> 1)
- - GPE (Geopolitical entity): Erkennen eines bestimmten Landes in dem Satz
+  - Zur Erkennung mussten teilweise die Wörter zunächst mithilfe der SpaCy Extension Numerizer umgewandelt und die Zahlenwerte daraus extrahiert werden (first -> 1st -> 1)
+ - GPE (Geopolitical Entity): Erkennung eines bestimmten Landes in dem vorliegenden Satz
 
 ## Chatbot
 - ~Open-Source Rasa Chatbot (Fragen ob Alternative verwendet werden soll)~ -> eigenes Modell entwickelt und trainiert
 - ~APIs zum Anbinden/Integrieren der relevanten Daten~(Nicht umsetzbar, da APIs kosten) -> CSV-Files zu FIFA Weltmeisterschaften als Datenbasis 
 - Backend mit Python-Flask
 - Frontend mit HTML (CSS) inklusive Javascript Funktion (zur Umsetzung des Chatbot)
-- Docker
+
 
 ### Backend mit Python-Flask
-- Anbindung der Dataprocessing-Funktionen, um Intents zu erkennen und die Daten aus den CSV-Files zu ziehen
-- Datentransfer mithilfe von JSON-Files, um die Kommunikation zwischen dem Javascriptchatbot und den Pythonfunktionen zu ermöglichen
+- Anbindung der Data Processing-Funktionen, um Intents zu erkennen und die Daten aus den CSV-Files zu ziehen
+- Datentransfer mithilfe von JSON-Files, um die Kommunikation zwischen dem Javascript Chatbot und den Pythonfunktionen zu ermöglichen
 
 ### Frontend (HTML, CSS, Javascript)
 Vorlage: https://github.com/patrickloeber/chatbot-deployment
@@ -122,15 +122,15 @@ Vorlage: https://github.com/patrickloeber/chatbot-deployment
 
 ### Funktionen des Chatbots
 - Visualisierung der Ausgabe
-- Interaktion: Kunde/Anwender kann dem Chatbot Fragen stellen welche vom Chatbot beantwortet werden
-- Named Entity Recognition: um Vereine (Geopolitical Entity), Ordinalwerte(Platzierungen)und Date erkennen und ausgeben lassen zu können
-  - Ersetzen von vordefinierten Synonmen (bsp. Weltmeister = 1. Platz)
-- Numerizer: Erkennung von geschriebenen Zahlen (bsp. eins) 
+- Interaktion: Kunde/Anwender kann dem Chatbot Fragen stellen, welche vom Chatbot beantwortet werden
+- Named Entity Recognition: um Länder(Geopolitical Entity), Ordinalwerte(Platzierungen) und Date erkennen und ausgeben lassen zu können
+  - Ersetzen von vordefinierten Synonymen (bsp. Weltmeister = 1. Place)
+- Numerizer: Erkennung von geschriebenen Zahlen (bsp. one) 
 - Chatbot akzeptiert lediglich die englische Sprache
-- Intentanalyse: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage diesbezüglich machen 
+- Intent Detection: Die Intention hinter der Anfrage des Nutzer verstehen und eine Abfrage darauf aufbauend machen 
 
 ### Quellen
-**Intentanalyse**
+**Intent Detection**
 - Liu, Bing, and Ian Lane. "Attention-based recurrent neural network models for joint intent detection and slot filling." arXiv preprint arXiv:1609.01454 (2016).
 - https://www.atlantis-press.com/journals/hcis/125963694
 - Cahn, Jack. "CHATBOT: Architecture, design, & development." University of Pennsylvania School of Engineering and Applied Science Department of Computer and Information Science (2017).
@@ -144,7 +144,7 @@ Vorlage: https://github.com/patrickloeber/chatbot-deployment
 **Datengrundlage**
 - https://www.kaggle.com/datasets/iamsouravbanerjee/fifa-football-world-cup-dataset?select=FIFA+-+2022.csv
 
-**Websiteentwicklung**
+**Website Entwicklung**
 - https://github.com/patrickloeber/chatbot-deployment
 
 **Bilder**
