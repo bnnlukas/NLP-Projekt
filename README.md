@@ -142,7 +142,7 @@ Vorlage: https://github.com/patrickloeber/chatbot-deployment
 - Model "en_core_web_trf": https://spacy.io/usage/models
 
 **Datengrundlage**
-- https://www.kaggle.com/datasets/iamsouravbanerjee/fifa-football-world-cup-dataset?select=FIFA+-+2022.csv
+- https://www.kaggle.com/datasets/iamsouravbanerjee/fifa-football-world-cup-dataset
 
 **Website Entwicklung**
 - https://github.com/patrickloeber/chatbot-deployment
