@@ -45,6 +45,8 @@ Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den
 
 2. Ausführen folgender Befehle:
 
+```python -m spacy download en_core_web_sm```
+
 ```cd NLP-Projekt```
 
 ```pip install -r requirements.txt```
