@@ -1,5 +1,5 @@
 # Entwicklung eines Chatbots für Themen rund um die Fußball Weltmeisterschaften
-Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Processing (WWI20DSA) mit den Teilnehmern und den erledigten Aufgaben:
+Ein Projekt im Modul Aktuelle Data Science Entwicklungen - Natural Language Processing (WWI20DSA) mit den Teilnehmern und den erledigten Aufgaben:
 - Lukas
   - Websiteentwicklung, inkl. Zusammenführen der NLP-Pipeline und verbinden mit den Chatboteingaben
   - NER-Analyse, um auf Basis eines erkannten Intents die korrekten Daten aus den CSV-Files einzulesen und in Form einer Antwort an den Chatbot zu übergeben (inkl. Einsatz der Numerizerextension)
@@ -27,20 +27,20 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
   
 
 ## Idee
-Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den Chatbot verschiedene Informationen über die FIFA Weltmeisterschaften anzeigen lassen zu können.  
+Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben, sich auf Englisch über den Chatbot verschiedene Informationen zu den FIFA Weltmeisterschaften anzeigen lassen zu können.  
 
 ![Alt text](/static/images/demo.png)
 
 ## Mögliche Fragen an den Chatbot
-- Which team became ___ place in ___?
-- On which position was ___ in ___?
-- Who hosted the world cup in the year ___?
-- On average, how many goals were scored in ___?
-- How many goals were scored ___?
-- How many matches were played in the world-championship of ___?
+- Which team became [ORDINAL] place in [YEAR]?
+- On which position was [COUNTRY] in [YEAR]?
+- Who hosted the World Cup in the year [YEAR]?
+- On average, how many goals were scored in [YEAR]?
+- How many goals were scored [YEAR]?
+- How many matches were played in the world-championship of [YEAR]?
 
 ## Ausführen des Chatbots
-1. Klonen des Repositorys
+1. Klonen des Repositories
 
 ```git clone https://github.com/bnnlukas/NLP-Projekt.git```
 
@@ -53,7 +53,7 @@ Für die Sportart Fußball soll ein Nutzer die Möglichkeit haben sich über den
 ```pip install -r requirements.txt```
 
 ```python app.py```
-- Wenn das Nltk-Package Stopwords nicht installiert wird, folgenden Code ausführen:
+- Wenn das NLTK-Package Stopwords nicht installiert wird, folgenden Code ausführen:
 ```
 import nltk
 import ssl
@@ -72,10 +72,10 @@ nltk.download('stopwords')
 ### Pre-Processing
 Der textuelle Input des Users wird in den Vorverarbeitungsschritten in für die Maschinen verständliche Sprache umgewandelt. Dafür wird der Text in Kleinschreibung (lowercase) umformuliert, um so eine Vereinheitlichung des Texts zu erwirken. Zudem werden jegliche Satzzeichen entfernt.
 
-Das SpaCy Modell "en_core_web_sm" wird genutzt, um die Stopwords zu entfernen. Sogenannte Stopwords bezeichnen für die inhaltliche Aussagekraft des Texts nicht aufwertende Begriffe, wie beispielsweise Artikel, Konjunktionen, usw. die dann entfernt werden, um wertvolleren Text zu erhalten.
+Das SpaCy Modell "en_core_web_sm" wird genutzt, um die Stopwords zu entfernen. Sogenannte Stopwords bezeichnen für die inhaltliche Aussagekraft des Texts nicht aufwertende Begriffe, wie beispielsweise Artikel, Konjunktionen, usw. die dann entfernt werden, um inhaltlich wertvolleren Text zu erhalten.
 
 ### Numerizer 
-Spacy Extension, um Zahlen in englischer Sprache in Integer, bzw. Floats umzuwandeln.
+SpaCy Extension, um Zahlen in englischer Sprache in Integer, bzw. Floatwerte umzuwandeln.
 - one -> 1
 - Umwandlung auch bei abgewandelten Formen
   - the second -> the 2nd
@@ -83,7 +83,7 @@ Spacy Extension, um Zahlen in englischer Sprache in Integer, bzw. Floats umzuwan
 ***„Wie können wir mit unserem Chatbot unseren Usern im Kontext unserer Produkte und der Customer Journeys helfen?“***
 - Herausfinden was der User möchte
 - Schlagwörter dem eigentlichen Zweck zuordnen
-- Auf Basis des Intents, weitere aufgaben des Chatbots anstoßen
+- Auf Basis des Intents, weitere Aufgaben des Chatbots anstoßen
 - Teil der Natural Language Understanding Domäne
 
 **Support Vector Classifier** ist ein Algorithmus für maschinelles Lernen, der für Klassifizierungsaufgaben verwendet wird. Er findet die beste Grenze (Hyperebene), die die Daten in verschiedene Klassen trennt, indem er die Marge (den Abstand zwischen der Grenze und den nächstgelegenen Datenpunkten aus jeder Klasse) maximiert. SVCs können sowohl für lineare als auch für nichtlineare Klassifizierungsaufgaben eingesetzt werden, indem verschiedene Kernel-Funktionen wie lineare, polynomiale und radiale Basisfunktionen (RBF) verwendet werden. Sie gelten als leistungsfähige Klassifikatoren mit guter Genauigkeit, die besonders nützlich sind, wenn die Daten nicht linear trennbar sind und die Anzahl der Merkmale viel größer ist als die Anzahl der Stichproben.
@@ -139,6 +139,7 @@ Vorlage: https://github.com/patrickloeber/chatbot-deployment
 **Spacy**
 - Numerizer: https://github.com/jaidevd/numerizer
 - https://spacy.io/usage/linguistic-features
+- Model "en_core_web_trf": https://spacy.io/usage/models
 
 **Datengrundlage**
 - https://www.kaggle.com/datasets/iamsouravbanerjee/fifa-football-world-cup-dataset?select=FIFA+-+2022.csv
