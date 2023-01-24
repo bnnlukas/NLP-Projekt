@@ -17,17 +17,8 @@ import ssl
 import pickle
 stopwords = stopwords.words('english')
 
-try:
-    _create_unverified_https_context = ssl._create_unverified_context
-except AttributeError:
-    pass
-else:
-    ssl._create_default_https_context = _create_unverified_https_context
-
 def get_intent(input):
-    
-    #necessary nltk and spacy package for the upcoming cleanup part
-    nltk.download('stopwords')
+
     nlp = spacy.load('en_core_web_sm')
     punctuations = string.punctuation
 
@@ -46,7 +37,7 @@ def get_intent(input):
             texts.append(tokens)
         return pd.Series(texts)
 
-        # further cleaning the text to apply a word2vec model
+    # further cleaning the text to apply a word2vec model
     def cleanup_text_word2vec(docs, logging=False):
         sentences = []
         counter = 1
@@ -64,7 +55,7 @@ def get_intent(input):
 
     # load the model from disk
     vectorizer = TfidfVectorizer()
-    filename_vecfit = 'vec_fit.sav'
+    filename_vecfit = './picklefiles/vec_fit.sav'
     vec_fit = pickle.load(open(filename_vecfit, 'rb'))
 
     # Define function to create word vector representation of a given cleaned piece of text by averaging the tf-idf vectors
@@ -83,7 +74,7 @@ def get_intent(input):
         return average #return converted cleaned data to use as input for SVC Model
 
     # load the model from disk
-    filename_model = 'intent_detection_model.sav'
+    filename_model = './picklefiles/intent_detection_model.sav'
     loaded_model = pickle.load(open(filename_model, 'rb'))
 
     cleanup = cleanup_text([input], logging=True)
@@ -91,7 +82,6 @@ def get_intent(input):
 
     # converting the cleaned data to vector
     cleanup_vec = np.zeros((1, 111), dtype="float32")  # 19579 x 300
-    print(cleanup_vec)
     for i in range(len(cleanup)):
         cleanup_vec[i] = create_average_vec(cleanup[i])
     # predict category of new input with the trained model    

@@ -7,7 +7,7 @@ import spacy
 from spacy.lang.en.examples import sentences 
 from numerizer import numerize
 
-# Definieren des deplace_dicts zum späteren Ersetzen von Satzbausteinen
+# Definieren des replace_dicts zum späteren Ersetzen von Satzbausteinen
 replace_dict = {
     'last world championship': 'World Cup in 2022',
     'last world-championship': 'World Cup in 2022',
