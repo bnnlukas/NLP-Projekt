@@ -19,6 +19,7 @@ Ein Projekt im Fach Aktuelle Data Science Entwicklungen - Natural Language Proce
 - Pascal 
   - Recherche und Testing verschiedener Intentanalysis Ansätze, mitunter mit BERT (nicht mehr verwendet)
   - Erstellung der Trainingsdaten auf Basis selbst geschriebener Nutzereingaben und Kategorien 
+  - Entwicklung des Preprocessing vom Textinput für die Verwendung von SVC, W2V und Tf-idf
   - Entwicklung des Intent Detectors auf Basis eines Support Vector Classifiers, Word2Vec und Tf-idf und abschließendem Gridsearch und k-fold tuning mithilfe der u.g. Quellen. 
   - Entwicklung der Evaluierungsmethode für den Classifier
   
