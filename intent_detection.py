@@ -64,14 +64,14 @@ def get_intent(input):
 
     # load the model from disk
     vectorizer = TfidfVectorizer()
-    filename = 'vec_fit.sav'
-    vec_fit = pickle.load(open(filename, 'rb'))
+    filename_vecfit = 'vec_fit.sav'
+    vec_fit = pickle.load(open(filename_vecfit, 'rb'))
 
     # Define function to create word vector representation of a given cleaned piece of text by averaging the tf-idf vectors
     # take in cleaned piece of text
     def create_average_vec(doc): 
         #initialize empty average vector of same length as number of features in vec_fit
-        average = np.zeros(len(vectorizer.get_feature_names()), dtype='float32')
+        average = np.zeros(111, dtype='float32')
         num_words = 0.
         #iterate over each word in doc and add tf-idf vector to average vector
         for word in doc.split():
@@ -83,14 +83,15 @@ def get_intent(input):
         return average #return converted cleaned data to use as input for SVC Model
 
     # load the model from disk
-    filename = 'intent_detection_model.sav'
-    loaded_model = pickle.load(open(filename, 'rb'))
+    filename_model = 'intent_detection_model.sav'
+    loaded_model = pickle.load(open(filename_model, 'rb'))
 
     cleanup = cleanup_text([input], logging=True)
     intent_categories = ['PlacementTeam', 'TeamPlacement', 'YearHost', 'bye', 'firstPlace', 'greeting', 'thankYou', 'year(avg)Goals', 'yearGoals', 'yearMatches']
 
     # converting the cleaned data to vector
-    cleanup_vec = np.zeros((1, len(vectorizer.get_feature_names())), dtype="float32")  # 19579 x 300
+    cleanup_vec = np.zeros((1, 111), dtype="float32")  # 19579 x 300
+    print(cleanup_vec)
     for i in range(len(cleanup)):
         cleanup_vec[i] = create_average_vec(cleanup[i])
     # predict category of new input with the trained model    
@@ -98,7 +99,6 @@ def get_intent(input):
 
     #get category of input in original form (not in encoded form)
     intent = intent_categories[int(y)]
-    print(intent)
     return intent
 
 # Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
