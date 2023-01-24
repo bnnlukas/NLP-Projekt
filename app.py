@@ -1,11 +1,14 @@
 from flask import Flask, render_template, request, jsonify
 
 from chat import get_response
+from model_training import train_model
 
 app = Flask(__name__)
 
 @app.get('/')
 def index_get():
+    # Beim Neustarten der Web-Applikation wird das Model neu trainieren
+    train_model()
     return render_template('base.html')
     
 

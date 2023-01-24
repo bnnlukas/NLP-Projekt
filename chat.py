@@ -1,4 +1,4 @@
-from intent_analysis import get_intent
+from intent_detection import get_intent
 from functions import return_answer
 
 bot_name = "Bot"

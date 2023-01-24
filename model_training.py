@@ -15,6 +15,7 @@ from sklearn.svm import SVC
 from sklearn.model_selection import GridSearchCV
 import nltk
 import ssl
+import pickle
 stopwords = stopwords.words('english')
 
 #Loading the dataset consisting of various questions related to football world-championships
@@ -95,12 +96,7 @@ except AttributeError:
 else:
     ssl._create_default_https_context = _create_unverified_https_context
 
-# defining function to train model with empty list at this point
 def train_model():
-    trained_model = ''
-    return trained_model
-# 
-def get_intent(input):
     df = pd.DataFrame(data)
     
     #necessary nltk and spacy package for the upcoming cleanup part
@@ -190,19 +186,9 @@ def get_intent(input):
                    kernel=grid_search.best_params_['kernel'])
     svclassifier.fit(train_cleaned_vec, y_train)
 
-    cleanup = cleanup_text([input], logging=True)
-    intent_categories = list(Encoder.classes_)
+    # save the model to disk
+    filename = 'intent_detection_model.sav'
+    pickle.dump(svclassifier, open(filename, 'wb'))
 
-    # converting the cleaned data to vector
-    cleanup_vec = np.zeros((1, len(vectorizer.get_feature_names())), dtype="float32")  # 19579 x 300
-    for i in range(len(cleanup)):
-        cleanup_vec[i] = create_average_vec(cleanup[i])
-    # predict category of new input with the trained model    
-    y = svclassifier.predict([cleanup_vec[0]])
-
-    #get category of input in original form (not in encoded form)
-    intent = intent_categories[int(y)]
-    print(intent)
-    return intent
-
+    return 
 # Code auf Basis von: https://www.kaggle.com/code/taranjeet03/intent-detection-svc-using-word2vec/notebook#)
