@@ -28,7 +28,7 @@ class Chatbox {
     toggleState(chatbox) {
         this.state = !this.state;
 
-        // show or hides the box
+        // Anzeigen der Chatbox
         if(this.state) {
             chatbox.classList.add('chatbox--active')
         } else {
@@ -36,6 +36,7 @@ class Chatbox {
         }
     }
 
+    //Verarbeiten der Eingangsnachricht
     onSendButton(chatbox) {
         var textField = chatbox.querySelector('input');
         let text1 = textField.value
@@ -46,7 +47,7 @@ class Chatbox {
         let msg1 = { name: "User", message: text1 }
         this.messages.push(msg1);
 
-        fetch('http://127.0.0.1:5000/predict', {
+        fetch('http://127.0.0.1:5000/get_answer', {
             method: 'POST',
             body: JSON.stringify({ message: text1 }),
             mode: 'cors',
@@ -67,7 +68,7 @@ class Chatbox {
             textField.value = ''
           });
     }
-
+    
     updateChatText(chatbox) {
         var html = '';
         this.messages.slice().reverse().forEach(function(item, index) {
@@ -89,3 +90,5 @@ class Chatbox {
 
 const chatbox = new Chatbox();
 chatbox.display();
+
+// Code auf Basis von: https://github.com/patrickloeber/chatbot-deployment
